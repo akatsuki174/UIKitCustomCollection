@@ -30,3 +30,13 @@ extension TopViewController: UITableViewDataSource {
         return viewModel.numberOfRows()
     }
 }
+
+extension TopViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+//        let part = viewModel.part(index: indexPath.row)
+        let storyboard = UIStoryboard(name: "View", bundle: nil)
+        guard let vc = storyboard.instantiateInitialViewController() else { return }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
