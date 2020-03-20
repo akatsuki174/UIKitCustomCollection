@@ -14,7 +14,39 @@
                     <view key="view" contentMode="scaleToFill" id="XLy-0n-ygE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="s9F-0A-Xwr">
+                                <rect key="frame" x="0.0" y="358.5" width="414" height="537.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3NK-Nn-j36">
+                                <rect key="frame" x="87" y="94" width="240" height="100"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="W4L-kO-QkS"/>
+                                    <constraint firstAttribute="height" constant="100" id="p1N-qR-ytr"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H3d-O3-7hA" userLabel="separator">
+                                <rect key="frame" x="0.0" y="357.5" width="414" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="wwK-ZY-e6T"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="s9F-0A-Xwr" secondAttribute="bottom" id="1R8-KA-aXf"/>
+                            <constraint firstItem="3NK-Nn-j36" firstAttribute="centerX" secondItem="VXU-44-d80" secondAttribute="centerX" id="26E-0x-JJ3"/>
+                            <constraint firstItem="s9F-0A-Xwr" firstAttribute="height" secondItem="XLy-0n-ygE" secondAttribute="height" multiplier="6:10" id="Hki-De-Ovx"/>
+                            <constraint firstItem="s9F-0A-Xwr" firstAttribute="top" secondItem="H3d-O3-7hA" secondAttribute="bottom" id="JAi-ld-LZp"/>
+                            <constraint firstItem="s9F-0A-Xwr" firstAttribute="leading" secondItem="VXU-44-d80" secondAttribute="leading" id="a6P-mr-Gv7"/>
+                            <constraint firstItem="VXU-44-d80" firstAttribute="trailing" secondItem="H3d-O3-7hA" secondAttribute="trailing" id="dok-vj-Mpi"/>
+                            <constraint firstItem="3NK-Nn-j36" firstAttribute="top" secondItem="VXU-44-d80" secondAttribute="top" constant="50" id="fic-JW-jc0"/>
+                            <constraint firstItem="H3d-O3-7hA" firstAttribute="leading" secondItem="VXU-44-d80" secondAttribute="leading" id="y2u-mE-TTR"/>
+                            <constraint firstItem="VXU-44-d80" firstAttribute="trailing" secondItem="s9F-0A-Xwr" secondAttribute="trailing" id="zQQ-Vk-qyt"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="VXU-44-d80"/>
                     </view>
                 </viewController>
