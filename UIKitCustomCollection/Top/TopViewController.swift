@@ -37,6 +37,7 @@ extension TopViewController: UITableViewDelegate {
         guard let part = viewModel.part(index: indexPath.row) else { return }
         let storyboard = UIStoryboard(name: part.storyboardName(), bundle: nil)
         guard let vc = storyboard.instantiateInitialViewController() else { return }
+        vc.title = part.name()
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
