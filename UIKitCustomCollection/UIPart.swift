@@ -44,4 +44,11 @@ enum UIPart: String, CaseIterable {
 //            return "UIStepper"
         }
     }
+    
+    // enum名の先頭1文字を大文字にしたものをstoryboard名にしている
+    func storyboardName() -> String {
+        let name = self.rawValue
+        let lowerStr = name.lowercased()
+        return String(lowerStr.prefix(1).uppercased()) + String(name.dropFirst())
+    }
 }
