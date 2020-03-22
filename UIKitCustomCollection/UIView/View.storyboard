@@ -18,6 +18,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="s9F-0A-Xwr">
                                 <rect key="frame" x="0.0" y="358.5" width="414" height="537.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="7k3-ra-eBe" id="wkV-Fl-hoE"/>
+                                    <outlet property="delegate" destination="7k3-ra-eBe" id="e93-qv-NZW"/>
+                                </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3NK-Nn-j36">
                                 <rect key="frame" x="87" y="94" width="240" height="100"/>
@@ -49,6 +53,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VXU-44-d80"/>
                     </view>
+                    <connections>
+                        <outlet property="customTarget" destination="3NK-Nn-j36" id="UEE-Px-htt"/>
+                        <outlet property="tableView" destination="s9F-0A-Xwr" id="z15-wn-ubY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6xf-x6-nuf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
