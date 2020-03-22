@@ -42,6 +42,15 @@ class ViewViewModel {
                 return "shadow width"
             }
         }
+        
+        func customPattern() -> CustomPattern {
+            switch self {
+            case .backgroundColor, .border, .radius, .shadow:
+                return .switch
+            case .borderWidth, .shadowWidth:
+                return .switch
+            }
+        }
     }
 }
 
