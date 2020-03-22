@@ -20,6 +20,7 @@
 		1807152E24243A7200740162 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1807152D24243A7200740162 /* ViewController.swift */; };
 		1807153024243A9600740162 /* View.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1807152F24243A9600740162 /* View.storyboard */; };
 		180715322425873000740162 /* ViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180715312425873000740162 /* ViewViewModel.swift */; };
+		1807153424272A6D00740162 /* CustomPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1807153324272A6D00740162 /* CustomPattern.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		1807152D24243A7200740162 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1807152F24243A9600740162 /* View.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = View.storyboard; sourceTree = "<group>"; };
 		180715312425873000740162 /* ViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewViewModel.swift; sourceTree = "<group>"; };
+		1807153324272A6D00740162 /* CustomPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPattern.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				180714F424225F9500740162 /* AppDelegate.swift */,
 				180714F624225F9500740162 /* SceneDelegate.swift */,
 				180715262422EF6D00740162 /* UIPart.swift */,
+				1807153324272A6D00740162 /* CustomPattern.swift */,
 				180714FD24225F9800740162 /* Assets.xcassets */,
 				180714FF24225F9800740162 /* LaunchScreen.storyboard */,
 				1807150224225F9800740162 /* Info.plist */,
@@ -298,6 +301,7 @@
 				180715322425873000740162 /* ViewViewModel.swift in Sources */,
 				180714F524225F9500740162 /* AppDelegate.swift in Sources */,
 				180714F724225F9500740162 /* SceneDelegate.swift in Sources */,
+				1807153424272A6D00740162 /* CustomPattern.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
