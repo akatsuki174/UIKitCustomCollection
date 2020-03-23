@@ -19,6 +19,8 @@
 		180715272422EF6D00740162 /* UIPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180715262422EF6D00740162 /* UIPart.swift */; };
 		1807152E24243A7200740162 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1807152D24243A7200740162 /* ViewController.swift */; };
 		1807153024243A9600740162 /* View.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1807152F24243A9600740162 /* View.storyboard */; };
+		180715382428FB8600740162 /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180715362428FB8600740162 /* SwitchCell.swift */; };
+		180715392428FB8600740162 /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180715372428FB8600740162 /* SwitchCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		180715262422EF6D00740162 /* UIPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPart.swift; sourceTree = "<group>"; };
 		1807152D24243A7200740162 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1807152F24243A9600740162 /* View.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = View.storyboard; sourceTree = "<group>"; };
+		180715362428FB8600740162 /* SwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
+		180715372428FB8600740162 /* SwitchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,9 +113,9 @@
 			children = (
 				1807152B2424395700740162 /* Top */,
 				1807152C24243A1F00740162 /* UIView */,
+				180715352428FA9100740162 /* Common */,
 				180714F424225F9500740162 /* AppDelegate.swift */,
 				180714F624225F9500740162 /* SceneDelegate.swift */,
-				180715262422EF6D00740162 /* UIPart.swift */,
 				180714FD24225F9800740162 /* Assets.xcassets */,
 				180714FF24225F9800740162 /* LaunchScreen.storyboard */,
 				1807150224225F9800740162 /* Info.plist */,
@@ -154,6 +158,16 @@
 				1807152F24243A9600740162 /* View.storyboard */,
 			);
 			path = UIView;
+			sourceTree = "<group>";
+		};
+		180715352428FA9100740162 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				180715262422EF6D00740162 /* UIPart.swift */,
+				180715362428FB8600740162 /* SwitchCell.swift */,
+				180715372428FB8600740162 /* SwitchCell.xib */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +278,7 @@
 				1807153024243A9600740162 /* View.storyboard in Resources */,
 				180714FE24225F9800740162 /* Assets.xcassets in Resources */,
 				180714FC24225F9500740162 /* Top.storyboard in Resources */,
+				180715392428FB8600740162 /* SwitchCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +306,7 @@
 				1807152E24243A7200740162 /* ViewController.swift in Sources */,
 				180715272422EF6D00740162 /* UIPart.swift in Sources */,
 				180715252422638B00740162 /* TopViewModel.swift in Sources */,
+				180715382428FB8600740162 /* SwitchCell.swift in Sources */,
 				180714F924225F9500740162 /* TopViewController.swift in Sources */,
 				180714F524225F9500740162 /* AppDelegate.swift in Sources */,
 				180714F724225F9500740162 /* SceneDelegate.swift in Sources */,
