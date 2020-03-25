@@ -22,22 +22,15 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZpE-tI-Egf">
-                        <rect key="frame" x="410" y="52.5" width="51" height="31"/>
-                    </switch>
                 </subviews>
                 <constraints>
                     <constraint firstItem="VLV-Cf-2af" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="6lc-HO-7t6"/>
-                    <constraint firstAttribute="trailing" secondItem="ZpE-tI-Egf" secondAttribute="trailing" constant="16" id="9Bb-t1-2Up"/>
-                    <constraint firstItem="ZpE-tI-Egf" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="n2V-8P-kAe"/>
-                    <constraint firstItem="ZpE-tI-Egf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VLV-Cf-2af" secondAttribute="trailing" constant="8" id="v1z-OB-k7p"/>
                     <constraint firstItem="VLV-Cf-2af" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="w1p-6y-QMy"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="propertyName" destination="VLV-Cf-2af" id="TB7-Fv-sGs"/>
-                <outlet property="propertySwitch" destination="ZpE-tI-Egf" id="8hr-95-CnS"/>
             </connections>
             <point key="canvasLocation" x="-0.7246376811594204" y="44.866071428571423"/>
         </tableViewCell>
