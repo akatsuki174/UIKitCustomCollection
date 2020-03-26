@@ -36,6 +36,7 @@ class SwitchCell: UITableViewCell {
               index: Int, callback: () -> Void) {
         propertyName.text = name
         propertySwitch.isOn = isEnable
+        propertySwitch.tag = index
         propertySwitch.addTarget(self, action: #selector(tappedSwitch(sender:)), for: .touchUpInside)
         self.accessoryView = propertySwitch
     }
