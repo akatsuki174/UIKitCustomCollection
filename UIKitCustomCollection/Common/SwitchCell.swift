@@ -17,6 +17,16 @@ class SwitchCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    
+    private static let cellName = "SwitchCell"
+    
+    static func nib() -> UINib {
+        return UINib(nibName: cellName, bundle: nil)
+    }
+    
+    static var reuseIdentifier: String {
+        get { return cellName }
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
