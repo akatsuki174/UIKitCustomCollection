@@ -12,7 +12,7 @@ class SwitchCell: UITableViewCell {
     
     @IBOutlet weak var propertyName: UILabel!
     private let propertySwitch = UISwitch()
-    var tappedSwitch: (Bool) -> Void = { _ in }
+    weak var delegate: SwitchCellDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,11 +37,15 @@ class SwitchCell: UITableViewCell {
         propertyName.text = name
         propertySwitch.isOn = isEnable
         propertySwitch.tag = index
-        propertySwitch.addTarget(self, action: #selector(tappedSwitch(sender:)), for: .touchUpInside)
+        propertySwitch.addTarget(self, action: #selector(tappedSwitch(sender:)), for: .valueChanged)
         self.accessoryView = propertySwitch
     }
     
     @objc func tappedSwitch(sender: UISwitch) {
-        tappedSwitch(sender.isOn)
+        delegate?.tappedSwitch(self, and: sender.isOn)
     }
+}
+
+protocol SwitchCellDelegate: AnyObject {
+    func tappedSwitch(_ cell: SwitchCell, and isOn: Bool)
 }
