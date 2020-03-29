@@ -17,13 +17,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zht-Vm-XGP">
-                        <rect key="frame" x="16" y="11.5" width="42" height="21"/>
+                        <rect key="frame" x="16" y="12" width="42" height="20"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="XOW-eN-lrf">
-                        <rect key="frame" x="210" y="6" width="94" height="32"/>
+                        <rect key="frame" x="210" y="8" width="94" height="28"/>
                         <connections>
                             <action selector="tappedStepper:" destination="KGk-i7-Jjw" eventType="valueChanged" id="khy-Fl-n7q"/>
                         </connections>
@@ -33,6 +33,7 @@
                     <constraint firstAttribute="trailing" secondItem="XOW-eN-lrf" secondAttribute="trailing" constant="16" id="D6b-Zy-fZC"/>
                     <constraint firstItem="zht-Vm-XGP" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Yca-ME-5M4"/>
                     <constraint firstItem="zht-Vm-XGP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="g4J-SE-WuG"/>
+                    <constraint firstItem="XOW-eN-lrf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="k45-z8-jHS"/>
                     <constraint firstItem="XOW-eN-lrf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zht-Vm-XGP" secondAttribute="trailing" constant="8" id="lMY-Wa-fL8"/>
                     <constraint firstItem="XOW-eN-lrf" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="xiQ-my-BAY"/>
                 </constraints>
