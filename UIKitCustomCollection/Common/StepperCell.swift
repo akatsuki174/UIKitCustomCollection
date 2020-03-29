@@ -11,6 +11,7 @@ import UIKit
 class StepperCell: UITableViewCell {
 
     @IBOutlet weak var propertyName: UILabel!
+    @IBOutlet weak var propertyValue: UILabel!
     @IBOutlet weak var stepper: UIStepper!
     weak var delegate: StepperCellDelegate?
     
@@ -36,16 +37,19 @@ class StepperCell: UITableViewCell {
     }
     
     func bind(name: String, defaultValue: Double) {
-        propertyName.text = name
+        propertyName.text = "\(name) = "
+        propertyValue.text = "\(Int(defaultValue))"
         stepper.value = defaultValue
     }
     
     @IBAction func tappedStepper(_ sender: UIStepper) {
-        delegate?.tappedStepper(self, value: sender.value)
+        let value = Int(sender.value)
+        propertyValue.text = "\(value)"
+        delegate?.tappedStepper(self, value: value)
     }
     
 }
 
 protocol StepperCellDelegate: AnyObject {
-    func tappedStepper(_ cell: StepperCell, value: Double)
+    func tappedStepper(_ cell: StepperCell, value: Int)
 }

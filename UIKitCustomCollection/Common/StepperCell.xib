@@ -28,19 +28,28 @@
                             <action selector="tappedStepper:" destination="KGk-i7-Jjw" eventType="valueChanged" id="khy-Fl-n7q"/>
                         </connections>
                     </stepper>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jhc-dt-OVx">
+                        <rect key="frame" x="58" y="11.5" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="XOW-eN-lrf" secondAttribute="trailing" constant="16" id="D6b-Zy-fZC"/>
+                    <constraint firstItem="Jhc-dt-OVx" firstAttribute="leading" secondItem="zht-Vm-XGP" secondAttribute="trailing" id="I35-ZA-AzT"/>
                     <constraint firstItem="zht-Vm-XGP" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Yca-ME-5M4"/>
                     <constraint firstItem="zht-Vm-XGP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="g4J-SE-WuG"/>
                     <constraint firstItem="XOW-eN-lrf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="k45-z8-jHS"/>
-                    <constraint firstItem="XOW-eN-lrf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zht-Vm-XGP" secondAttribute="trailing" constant="8" id="lMY-Wa-fL8"/>
+                    <constraint firstItem="Jhc-dt-OVx" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="oUS-tT-CDE"/>
+                    <constraint firstItem="XOW-eN-lrf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Jhc-dt-OVx" secondAttribute="trailing" constant="8" id="sva-NJ-HT6"/>
                     <constraint firstItem="XOW-eN-lrf" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="xiQ-my-BAY"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="propertyName" destination="zht-Vm-XGP" id="QNH-hX-xiQ"/>
+                <outlet property="propertyValue" destination="Jhc-dt-OVx" id="guE-7y-V7l"/>
                 <outlet property="stepper" destination="XOW-eN-lrf" id="cje-UK-7vT"/>
             </connections>
             <point key="canvasLocation" x="139" y="98"/>
