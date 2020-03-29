@@ -35,9 +35,9 @@ class StepperCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func bind(name: String, value: Double) {
+    func bind(name: String, defaultValue: Double) {
         propertyName.text = name
-        stepper.value = value
+        stepper.value = defaultValue
     }
     
     @IBAction func tappedStepper(_ sender: UIStepper) {
