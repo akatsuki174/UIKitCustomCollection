@@ -32,11 +32,9 @@ class SwitchCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
  
-    func bind(name: String, isEnable: Bool,
-              index: Int, callback: () -> Void) {
+    func bind(name: String, isEnable: Bool, callback: () -> Void) {
         propertyName.text = name
         propertySwitch.isOn = isEnable
-        propertySwitch.tag = index
         propertySwitch.addTarget(self, action: #selector(tappedSwitch(sender:)), for: .valueChanged)
         self.accessoryView = propertySwitch
     }
