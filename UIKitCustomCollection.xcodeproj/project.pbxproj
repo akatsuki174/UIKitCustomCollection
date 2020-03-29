@@ -21,6 +21,8 @@
 		1807153024243A9600740162 /* View.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1807152F24243A9600740162 /* View.storyboard */; };
 		180715382428FB8600740162 /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180715362428FB8600740162 /* SwitchCell.swift */; };
 		180715392428FB8600740162 /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180715372428FB8600740162 /* SwitchCell.xib */; };
+		180881832430A8EE0075ECD6 /* StepperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180881812430A8EE0075ECD6 /* StepperCell.swift */; };
+		180881842430A8EE0075ECD6 /* StepperCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180881822430A8EE0075ECD6 /* StepperCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		1807152F24243A9600740162 /* View.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = View.storyboard; sourceTree = "<group>"; };
 		180715362428FB8600740162 /* SwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
 		180715372428FB8600740162 /* SwitchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchCell.xib; sourceTree = "<group>"; };
+		180881812430A8EE0075ECD6 /* StepperCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperCell.swift; sourceTree = "<group>"; };
+		180881822430A8EE0075ECD6 /* StepperCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StepperCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,7 +168,9 @@
 			isa = PBXGroup;
 			children = (
 				180715262422EF6D00740162 /* UIPart.swift */,
+				180881812430A8EE0075ECD6 /* StepperCell.swift */,
 				180715362428FB8600740162 /* SwitchCell.swift */,
+				180881822430A8EE0075ECD6 /* StepperCell.xib */,
 				180715372428FB8600740162 /* SwitchCell.xib */,
 			);
 			path = Common;
@@ -275,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1807150124225F9800740162 /* LaunchScreen.storyboard in Resources */,
+				180881842430A8EE0075ECD6 /* StepperCell.xib in Resources */,
 				1807153024243A9600740162 /* View.storyboard in Resources */,
 				180714FE24225F9800740162 /* Assets.xcassets in Resources */,
 				180714FC24225F9500740162 /* Top.storyboard in Resources */,
@@ -310,6 +317,7 @@
 				180714F924225F9500740162 /* TopViewController.swift in Sources */,
 				180714F524225F9500740162 /* AppDelegate.swift in Sources */,
 				180714F724225F9500740162 /* SceneDelegate.swift in Sources */,
+				180881832430A8EE0075ECD6 /* StepperCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
