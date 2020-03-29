@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SwitchCell: UITableViewCell {
+class SwitchCell: UITableViewCell, BaseCellProtocol {
     
     @IBOutlet weak var propertyName: UILabel!
     private let propertySwitch = UISwitch()
@@ -18,16 +18,8 @@ class SwitchCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    private static let cellName = "SwitchCell"
+    static var cellName: String = "SwitchCell"
     
-    static func nib() -> UINib {
-        return UINib(nibName: cellName, bundle: nil)
-    }
-    
-    static var reuseIdentifier: String {
-        get { return cellName }
-    }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }

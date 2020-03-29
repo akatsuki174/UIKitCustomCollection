@@ -8,28 +8,19 @@
 
 import UIKit
 
-class StepperCell: UITableViewCell {
-
+class StepperCell: UITableViewCell, BaseCellProtocol {
     @IBOutlet weak var propertyName: UILabel!
     @IBOutlet weak var propertyValue: UILabel!
     @IBOutlet weak var stepper: UIStepper!
     weak var delegate: StepperCellDelegate?
-    
+
+    static var cellName: String = "StepperCell"
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
-    private static let cellName = "StepperCell"
-    
-    static func nib() -> UINib {
-        return UINib(nibName: cellName, bundle: nil)
-    }
-    
-    static var reuseIdentifier: String {
-        get { return cellName }
-    }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

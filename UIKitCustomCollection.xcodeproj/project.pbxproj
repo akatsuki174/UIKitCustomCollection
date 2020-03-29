@@ -23,6 +23,7 @@
 		180715392428FB8600740162 /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180715372428FB8600740162 /* SwitchCell.xib */; };
 		180881832430A8EE0075ECD6 /* StepperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180881812430A8EE0075ECD6 /* StepperCell.swift */; };
 		180881842430A8EE0075ECD6 /* StepperCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180881822430A8EE0075ECD6 /* StepperCell.xib */; };
+		180881862430DBA40075ECD6 /* BaseCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180881852430DBA40075ECD6 /* BaseCellProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		180715372428FB8600740162 /* SwitchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchCell.xib; sourceTree = "<group>"; };
 		180881812430A8EE0075ECD6 /* StepperCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperCell.swift; sourceTree = "<group>"; };
 		180881822430A8EE0075ECD6 /* StepperCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StepperCell.xib; sourceTree = "<group>"; };
+		180881852430DBA40075ECD6 /* BaseCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCellProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 		180715352428FA9100740162 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				180881852430DBA40075ECD6 /* BaseCellProtocol.swift */,
 				180715262422EF6D00740162 /* UIPart.swift */,
 				180881812430A8EE0075ECD6 /* StepperCell.swift */,
 				180715362428FB8600740162 /* SwitchCell.swift */,
@@ -314,6 +317,7 @@
 				180715272422EF6D00740162 /* UIPart.swift in Sources */,
 				180715252422638B00740162 /* TopViewModel.swift in Sources */,
 				180715382428FB8600740162 /* SwitchCell.swift in Sources */,
+				180881862430DBA40075ECD6 /* BaseCellProtocol.swift in Sources */,
 				180714F924225F9500740162 /* TopViewController.swift in Sources */,
 				180714F524225F9500740162 /* AppDelegate.swift in Sources */,
 				180714F724225F9500740162 /* SceneDelegate.swift in Sources */,
