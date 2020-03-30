@@ -17,15 +17,30 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(SwitchCell.nib(), forCellReuseIdentifier: SwitchCell.reuseIdentifier)
+        tableView.register(StepperCell.nib(), forCellReuseIdentifier: StepperCell.reuseIdentifier)
     }
 }
 
 extension ViewController: UITableViewDataSource {
  
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = viewModel.property(index: indexPath.row)?.name()
-        return cell
+        guard let property = viewModel.property(index: indexPath.row) else { return UITableViewCell() }
+        let propertyPattern = property.customPattern()
+        let propertyName = property.name()
+        
+        if propertyPattern == .switch {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: SwitchCell.reuseIdentifier) as? SwitchCell else { fatalError() }
+            cell.bind(name: propertyName, isEnable: true)
+            cell.delegate = self
+            return cell
+        } else if propertyPattern == .stepper {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: StepperCell.reuseIdentifier) as? StepperCell else { fatalError() }
+            cell.bind(name: propertyName, defaultValue: 1)
+            cell.delegate = self
+            return cell
+        }
+        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -36,5 +51,17 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+extension ViewController: SwitchCellDelegate {
+    func tappedSwitch(_ cell: SwitchCell, and isOn: Bool) {
+        
+    }
+}
+
+extension ViewController: StepperCellDelegate {
+    func tappedStepper(_ cell: StepperCell, value: Int) {
+    
     }
 }

@@ -48,7 +48,7 @@ class ViewViewModel {
             case .backgroundColor, .border, .radius, .shadow:
                 return .switch
             case .borderWidth, .shadowWidth:
-                return .switch
+                return .stepper
             }
         }
     }
