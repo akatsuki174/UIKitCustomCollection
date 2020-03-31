@@ -23,6 +23,7 @@ class ViewViewModel {
         case border
         case borderWidth
         case radius
+        case radiusValue
         case shadow
         case shadowWidth
         
@@ -36,6 +37,8 @@ class ViewViewModel {
                 return "border width"
             case .radius:
                 return "radius"
+            case .radiusValue:
+                return "radius value"
             case .shadow:
                 return "shadow"
             case .shadowWidth:
@@ -47,7 +50,7 @@ class ViewViewModel {
             switch self {
             case .backgroundColor, .border, .radius, .shadow:
                 return .switch
-            case .borderWidth, .shadowWidth:
+            case .borderWidth, .radiusValue, .shadowWidth:
                 return .stepper
             }
         }
