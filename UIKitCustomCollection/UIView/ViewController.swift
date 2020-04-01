@@ -61,6 +61,10 @@ extension ViewController: SwitchCellDelegate {
         switch property {
         case .backgroundColor:
             customTarget.backgroundColor = isOn ? UIColor.systemTeal : UIColor.clear
+        case .border:
+            customTarget.layer.borderColor = UIColor.black.cgColor
+            let value = isOn ? viewModel.propertyValue(property: property) : 0
+            customTarget.layer.borderWidth = CGFloat(value ?? 0)
         default:
             ()
         }
