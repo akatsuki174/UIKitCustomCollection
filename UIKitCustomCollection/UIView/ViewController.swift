@@ -31,7 +31,7 @@ extension ViewController: UITableViewDataSource {
         
         if propertyPattern == .switch {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: SwitchCell.reuseIdentifier) as? SwitchCell else { fatalError() }
-            cell.bind(name: propertyName, isEnable: true)
+            cell.bind(name: propertyName, isEnable: viewModel.isEnableProperty(property: property))
             cell.delegate = self
             return cell
         } else if propertyPattern == .stepper {

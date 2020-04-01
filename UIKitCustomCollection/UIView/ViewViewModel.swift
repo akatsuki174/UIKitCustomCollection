@@ -8,6 +8,10 @@
 
 class ViewViewModel {
     private let properties = ViewProperty.allCases
+    private var isEnableBackgroundColor = true
+    private var isEnableBorder = false
+    private var isEnableRadius = false
+    private var isEnableShadow = false
     
     func numberOfRows() -> Int {
         return properties.count
@@ -16,6 +20,21 @@ class ViewViewModel {
     func property(index: Int) -> ViewProperty? {
         if index >= properties.count { return nil }
         return properties[index]
+    }
+    
+    func isEnableProperty(property: ViewProperty) -> Bool? {
+        switch property {
+        case .backgroundColor:
+            return isEnableBackgroundColor
+        case .border:
+            return isEnableBorder
+        case .radius:
+            return isEnableRadius
+        case .shadow:
+            return isEnableShadow
+        default:
+            return nil
+        }
     }
     
     enum ViewProperty: String, CaseIterable {
