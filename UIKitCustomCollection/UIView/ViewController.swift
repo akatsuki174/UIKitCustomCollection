@@ -36,7 +36,7 @@ extension ViewController: UITableViewDataSource {
             return cell
         } else if propertyPattern == .stepper {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: StepperCell.reuseIdentifier) as? StepperCell else { fatalError() }
-            cell.bind(name: propertyName, defaultValue: 1)
+            cell.bind(name: propertyName, value: viewModel.propertyValue(property: property))
             cell.delegate = self
             return cell
         }

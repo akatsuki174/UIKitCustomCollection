@@ -12,6 +12,9 @@ class ViewViewModel {
     private var isEnableBorder = false
     private var isEnableRadius = false
     private var isEnableShadow = false
+    private var currentBorderWidth: Double = 1
+    private var currentRadiusValue: Double = 5
+    private var currentShadowWidth: Double = 3
     
     func numberOfRows() -> Int {
         return properties.count
@@ -32,6 +35,19 @@ class ViewViewModel {
             return isEnableRadius
         case .shadow:
             return isEnableShadow
+        default:
+            return nil
+        }
+    }
+    
+    func propertyValue(property: ViewProperty) -> Double? {
+        switch property {
+        case .border, .borderWidth:
+            return currentBorderWidth
+        case .radius, .radiusValue:
+            return currentRadiusValue
+        case .shadow, .shadowWidth:
+            return currentShadowWidth
         default:
             return nil
         }

@@ -27,10 +27,12 @@ class StepperCell: UITableViewCell, BaseCellProtocol {
         // Configure the view for the selected state
     }
     
-    func bind(name: String, defaultValue: Double) {
+    func bind(name: String, value: Double?) {
         propertyName.text = "\(name) = "
-        propertyValue.text = "\(Int(defaultValue))"
-        stepper.value = defaultValue
+        if let v = value {
+            propertyValue.text = "\(Int(v))"
+            stepper.value = v
+        }
     }
     
     @IBAction func tappedStepper(_ sender: UIStepper) {
