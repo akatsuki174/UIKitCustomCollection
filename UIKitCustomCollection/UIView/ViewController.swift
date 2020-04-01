@@ -56,7 +56,14 @@ extension ViewController: UITableViewDelegate {
 
 extension ViewController: SwitchCellDelegate {
     func tappedSwitch(_ cell: SwitchCell, and isOn: Bool) {
-        
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        guard let property = viewModel.property(index: indexPath.row) else { return }
+        switch property {
+        case .backgroundColor:
+            customTarget.backgroundColor = isOn ? UIColor.systemTeal : UIColor.clear
+        default:
+            ()
+        }
     }
 }
 
