@@ -65,6 +65,7 @@ extension ViewController: SwitchCellDelegate {
             customTarget.layer.borderColor = UIColor.black.cgColor
             let value = isOn ? viewModel.propertyValue(property: property) : 0
             customTarget.layer.borderWidth = CGFloat(value ?? 0)
+            viewModel.updateValueBool(property: property, value: isOn)
         default:
             ()
         }
@@ -73,6 +74,17 @@ extension ViewController: SwitchCellDelegate {
 
 extension ViewController: StepperCellDelegate {
     func tappedStepper(_ cell: StepperCell, value: Int) {
-    
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        guard let property = viewModel.property(index: indexPath.row) else { return }
+        switch property {
+        case .borderWidth:
+            if let isEnable = viewModel.propertyBool(property: property), isEnable {
+                customTarget.layer.borderColor = UIColor.black.cgColor
+                customTarget.layer.borderWidth = CGFloat(value)
+            }
+            viewModel.updateValue(property: property, value: Double(value))
+        default:
+            ()
+        }
     }
 }

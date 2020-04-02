@@ -53,6 +53,47 @@ class ViewViewModel {
         }
     }
     
+    func propertyBool(property: ViewProperty) -> Bool? {
+        switch property {
+        case .border, .borderWidth:
+            return isEnableBorder
+        case .radius, .radiusValue:
+            return isEnableRadius
+        case .shadow, .shadowWidth:
+            return isEnableShadow
+        default:
+            return nil
+        }
+    }
+    
+    func updateValue(property: ViewProperty, value: Double) {
+        switch property {
+        case .borderWidth:
+            currentBorderWidth = value
+        case .radiusValue:
+            currentRadiusValue = value
+        case .shadowWidth:
+            currentShadowWidth = value
+        default:
+            ()
+        }
+    }
+    
+    func updateValueBool(property: ViewProperty, value: Bool) {
+        switch property {
+        case .backgroundColor:
+            isEnableBackgroundColor = value
+        case .border:
+            isEnableBorder = value
+        case .radius:
+            isEnableRadius = value
+        case .shadow:
+            isEnableShadow = value
+        default:
+            ()
+        }
+    }
+    
     enum ViewProperty: String, CaseIterable {
         case backgroundColor
         case border
