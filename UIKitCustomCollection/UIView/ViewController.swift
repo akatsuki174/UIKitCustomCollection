@@ -28,15 +28,16 @@ extension ViewController: UITableViewDataSource {
         guard let property = viewModel.property(index: indexPath.row) else { return UITableViewCell() }
         let propertyPattern = property.customPattern()
         let propertyName = property.name()
-        
+        let values = viewModel.getPropertyValues(property: property)
+
         if propertyPattern == .switch {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: SwitchCell.reuseIdentifier) as? SwitchCell else { fatalError() }
-            cell.bind(name: propertyName, isEnable: viewModel.isEnableProperty(property: property))
+            cell.bind(name: propertyName, isEnable: values.isEnabled)
             cell.delegate = self
             return cell
         } else if propertyPattern == .stepper {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: StepperCell.reuseIdentifier) as? StepperCell else { fatalError() }
-            cell.bind(name: propertyName, value: viewModel.propertyValue(property: property))
+            cell.bind(name: propertyName, value: values.value ?? 0)
             cell.delegate = self
             return cell
         }
@@ -58,14 +59,14 @@ extension ViewController: SwitchCellDelegate {
     func tappedSwitch(_ cell: SwitchCell, and isOn: Bool) {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
         guard let property = viewModel.property(index: indexPath.row) else { return }
+        let values = viewModel.getPropertyValues(property: property)
         switch property {
         case .backgroundColor:
             customTarget.backgroundColor = isOn ? UIColor.systemTeal : UIColor.clear
         case .border:
             customTarget.layer.borderColor = UIColor.black.cgColor
-            let value = isOn ? viewModel.propertyValue(property: property) : 0
-            customTarget.layer.borderWidth = CGFloat(value ?? 0)
-            viewModel.updateValueBool(property: property, value: isOn)
+            customTarget.layer.borderWidth = CGFloat(isOn ? values.value ?? 0 : 0)
+            viewModel.updateValue(property: property, value: isOn)
         default:
             ()
         }
@@ -78,7 +79,7 @@ extension ViewController: StepperCellDelegate {
         guard let property = viewModel.property(index: indexPath.row) else { return }
         switch property {
         case .borderWidth:
-            if let isEnable = viewModel.propertyBool(property: property), isEnable {
+            if viewModel.getPropertyValues(property: property).isEnabled {
                 customTarget.layer.borderColor = UIColor.black.cgColor
                 customTarget.layer.borderWidth = CGFloat(value)
             }

@@ -25,72 +25,44 @@ class ViewViewModel {
         return properties[index]
     }
     
-    func isEnableProperty(property: ViewProperty) -> Bool? {
+    func getPropertyValues(property: ViewProperty) -> (isEnabled: Bool, value: Double?) {
         switch property {
         case .backgroundColor:
-            return isEnableBackgroundColor
-        case .border:
-            return isEnableBorder
-        case .radius:
-            return isEnableRadius
-        case .shadow:
-            return isEnableShadow
-        default:
-            return nil
-        }
-    }
-    
-    func propertyValue(property: ViewProperty) -> Double? {
-        switch property {
+            return (isEnableBackgroundColor, nil)
         case .border, .borderWidth:
-            return currentBorderWidth
+            return (isEnableBorder, currentBorderWidth)
         case .radius, .radiusValue:
-            return currentRadiusValue
+            return (isEnableRadius, currentRadiusValue)
         case .shadow, .shadowWidth:
-            return currentShadowWidth
-        default:
-            return nil
+            return (isEnableShadow, currentShadowWidth)
         }
     }
     
-    func propertyBool(property: ViewProperty) -> Bool? {
-        switch property {
-        case .border, .borderWidth:
-            return isEnableBorder
-        case .radius, .radiusValue:
-            return isEnableRadius
-        case .shadow, .shadowWidth:
-            return isEnableShadow
-        default:
-            return nil
-        }
-    }
-    
-    func updateValue(property: ViewProperty, value: Double) {
-        switch property {
-        case .borderWidth:
-            currentBorderWidth = value
-        case .radiusValue:
-            currentRadiusValue = value
-        case .shadowWidth:
-            currentShadowWidth = value
-        default:
-            ()
-        }
-    }
-    
-    func updateValueBool(property: ViewProperty, value: Bool) {
-        switch property {
-        case .backgroundColor:
-            isEnableBackgroundColor = value
-        case .border:
-            isEnableBorder = value
-        case .radius:
-            isEnableRadius = value
-        case .shadow:
-            isEnableShadow = value
-        default:
-            ()
+    func updateValue(property: ViewProperty, value: Any) {
+        if let boolValue = value as? Bool {
+            switch property {
+            case .backgroundColor:
+                isEnableBackgroundColor = boolValue
+            case .border:
+                isEnableBorder = boolValue
+            case .radius:
+                isEnableRadius = boolValue
+            case .shadow:
+                isEnableShadow = boolValue
+            default:
+                ()
+            }
+        } else if let doubleValue = value as? Double {
+            switch property {
+            case .borderWidth:
+                currentBorderWidth = doubleValue
+            case .radiusValue:
+                currentRadiusValue = doubleValue
+            case .shadowWidth:
+                currentShadowWidth = doubleValue
+            default:
+                ()
+            }
         }
     }
     
