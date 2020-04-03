@@ -13,7 +13,7 @@ class ViewViewModel {
     private var isEnableRadius = false
     private var isEnableShadow = false
     private var currentBorderWidth: Double = 1
-    private var currentRadiusValue: Double = 5
+    private var currentRadiusValue: Double = 12
     private var currentShadowWidth: Double = 3
     
     func numberOfRows() -> Int {
