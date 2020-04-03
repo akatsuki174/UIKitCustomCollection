@@ -59,17 +59,20 @@ extension ViewController: SwitchCellDelegate {
     func tappedSwitch(_ cell: SwitchCell, and isOn: Bool) {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
         guard let property = viewModel.property(index: indexPath.row) else { return }
-        let values = viewModel.getPropertyValues(property: property)
+        let value = viewModel.getPropertyValues(property: property).value ?? 0
         switch property {
         case .backgroundColor:
             customTarget.backgroundColor = isOn ? UIColor.systemTeal : UIColor.clear
         case .border:
             customTarget.layer.borderColor = UIColor.black.cgColor
-            customTarget.layer.borderWidth = CGFloat(isOn ? values.value ?? 0 : 0)
-            viewModel.updateValue(property: property, value: isOn)
+            customTarget.layer.borderWidth = CGFloat(isOn ? value : 0)
+        case .radius:
+            customTarget.layer.cornerRadius = CGFloat(isOn ? value : 0)
+            customTarget.layer.masksToBounds = true
         default:
             ()
         }
+        viewModel.updateValue(property: property, value: isOn)
     }
 }
 
