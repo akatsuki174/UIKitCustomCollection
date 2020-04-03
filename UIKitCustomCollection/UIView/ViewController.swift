@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         tableView.register(SwitchCell.nib(), forCellReuseIdentifier: SwitchCell.reuseIdentifier)
         tableView.register(StepperCell.nib(), forCellReuseIdentifier: StepperCell.reuseIdentifier)
+        customTarget.layer.masksToBounds = true
     }
 }
 
@@ -68,7 +69,6 @@ extension ViewController: SwitchCellDelegate {
             customTarget.layer.borderWidth = CGFloat(isOn ? value : 0)
         case .radius:
             customTarget.layer.cornerRadius = CGFloat(isOn ? value : 0)
-            customTarget.layer.masksToBounds = true
         default:
             ()
         }
@@ -80,15 +80,17 @@ extension ViewController: StepperCellDelegate {
     func tappedStepper(_ cell: StepperCell, value: Int) {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
         guard let property = viewModel.property(index: indexPath.row) else { return }
-        switch property {
-        case .borderWidth:
-            if viewModel.getPropertyValues(property: property).isEnabled {
+        if viewModel.getPropertyValues(property: property).isEnabled {
+            switch property {
+            case .borderWidth:
                 customTarget.layer.borderColor = UIColor.black.cgColor
                 customTarget.layer.borderWidth = CGFloat(value)
+            case .radiusValue:
+                customTarget.layer.cornerRadius = CGFloat(value)
+            default:
+                ()
             }
-            viewModel.updateValue(property: property, value: Double(value))
-        default:
-            ()
         }
+        viewModel.updateValue(property: property, value: Double(value))
     }
 }
