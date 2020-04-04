@@ -19,7 +19,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         tableView.register(SwitchCell.nib(), forCellReuseIdentifier: SwitchCell.reuseIdentifier)
         tableView.register(StepperCell.nib(), forCellReuseIdentifier: StepperCell.reuseIdentifier)
-        customTarget.layer.masksToBounds = true
     }
 }
 
@@ -69,6 +68,12 @@ extension ViewController: SwitchCellDelegate {
             customTarget.layer.borderWidth = CGFloat(isOn ? value : 0)
         case .radius:
             customTarget.layer.cornerRadius = CGFloat(isOn ? value : 0)
+        case .shadow:
+            // TODO: 値を動的にする
+            customTarget.layer.shadowColor = UIColor.black.cgColor
+            customTarget.layer.shadowOffset = .zero
+            customTarget.layer.shadowOpacity = 0.7
+            customTarget.layer.shadowRadius = CGFloat(viewModel.getPropertyValues(property: .radiusValue).value ?? 0)
         default:
             ()
         }
