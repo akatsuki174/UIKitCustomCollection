@@ -72,8 +72,9 @@ extension ViewController: SwitchCellDelegate {
             // TODO: 値を動的にする
             customTarget.layer.shadowColor = UIColor.black.cgColor
             customTarget.layer.shadowOffset = .zero
-            customTarget.layer.shadowOpacity = 0.7
-            customTarget.layer.shadowRadius = CGFloat(viewModel.getPropertyValues(property: .radiusValue).value ?? 0)
+            let shadowOpacity = isOn ? 0.7 : 0.0
+            customTarget.layer.shadowOpacity = Float(shadowOpacity) // 濃さ
+            customTarget.layer.shadowRadius = CGFloat(12) // ぼかし量
         default:
             ()
         }
