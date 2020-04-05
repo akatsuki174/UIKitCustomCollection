@@ -6,6 +6,8 @@
 //  Copyright © 2020 akatsuki. All rights reserved.
 //
 
+import CoreGraphics
+
 class ViewViewModel {
     private let properties = ViewProperty.allCases
     private var isEnableBackgroundColor = true
@@ -14,7 +16,9 @@ class ViewViewModel {
     private var isEnableShadow = false
     private var currentBorderWidth: Double = 1
     private var currentRadiusValue: Double = 12
-    private var currentShadowWidth: Double = 3
+    private var currentShadowOffset: CGSize = CGSize(width: 0, height: 0)
+    private var currentShadowOpacity: Float = 0.7
+    private var currentShadowRadius: CGFloat = 5
     
     func numberOfRows() -> Int {
         return properties.count
@@ -25,7 +29,7 @@ class ViewViewModel {
         return properties[index]
     }
     
-    func getPropertyValues(property: ViewProperty) -> (isEnabled: Bool, value: Double?) {
+    func getPropertyValues(property: ViewProperty) -> (isEnabled: Bool, value: Any?) {
         switch property {
         case .backgroundColor:
             return (isEnableBackgroundColor, nil)
@@ -33,8 +37,8 @@ class ViewViewModel {
             return (isEnableBorder, currentBorderWidth)
         case .radius, .radiusValue:
             return (isEnableRadius, currentRadiusValue)
-        case .shadow, .shadowWidth:
-            return (isEnableShadow, currentShadowWidth)
+        case .shadow, .shadowOffset, .shadowOpacity, .shadowRadius:
+            return (isEnableShadow, ShadowProperties(shadowOffset: currentShadowOffset, shadowOpacity: currentShadowOpacity, shadowRadius: currentShadowRadius))
         }
     }
     
@@ -58,8 +62,17 @@ class ViewViewModel {
                 currentBorderWidth = doubleValue
             case .radiusValue:
                 currentRadiusValue = doubleValue
-            case .shadowWidth:
-                currentShadowWidth = doubleValue
+            default:
+                ()
+            }
+        } else if let shadowProperties = value as? ShadowProperties {
+            switch property {
+            case .shadowOffset:
+                currentShadowOffset = shadowProperties.shadowOffset
+            case .shadowOpacity:
+                currentShadowOpacity = shadowProperties.shadowOpacity
+            case .shadowRadius:
+                currentShadowRadius = shadowProperties.shadowRadius
             default:
                 ()
             }
@@ -73,7 +86,9 @@ class ViewViewModel {
         case radius
         case radiusValue
         case shadow
-        case shadowWidth
+        case shadowOffset
+        case shadowOpacity // 濃さ
+        case shadowRadius // ぼかし量
         
         func name() -> String {
             switch self {
@@ -89,8 +104,12 @@ class ViewViewModel {
                 return "radius value"
             case .shadow:
                 return "shadow"
-            case .shadowWidth:
-                return "shadow width"
+            case .shadowOffset:
+                return "shadow offset"
+            case .shadowOpacity:
+                return "shadow opacity"
+            case .shadowRadius:
+                return "shadow radius"
             }
         }
         
@@ -98,10 +117,15 @@ class ViewViewModel {
             switch self {
             case .backgroundColor, .border, .radius, .shadow:
                 return .switch
-            case .borderWidth, .radiusValue, .shadowWidth:
+            case .borderWidth, .radiusValue, .shadowOffset, .shadowOpacity, .shadowRadius:
                 return .stepper
             }
         }
     }
 }
 
+struct ShadowProperties {
+    let shadowOffset: CGSize
+    let shadowOpacity: Float
+    let shadowRadius: CGFloat
+}

@@ -65,16 +65,22 @@ extension ViewController: SwitchCellDelegate {
             customTarget.backgroundColor = isOn ? UIColor.systemTeal : UIColor.clear
         case .border:
             customTarget.layer.borderColor = UIColor.black.cgColor
-            customTarget.layer.borderWidth = CGFloat(isOn ? value : 0)
+            if let value = value as? Double {
+                customTarget.layer.borderWidth = CGFloat(isOn ? value : 0)
+            }
         case .radius:
-            customTarget.layer.cornerRadius = CGFloat(isOn ? value : 0)
+            if let value = value as? Double {
+                customTarget.layer.cornerRadius = CGFloat(isOn ? value : 0)
+            }
         case .shadow:
-            // TODO: 値を動的にする
             customTarget.layer.shadowColor = UIColor.black.cgColor
-            customTarget.layer.shadowOffset = .zero
-            let shadowOpacity = isOn ? 0.7 : 0.0
-            customTarget.layer.shadowOpacity = Float(shadowOpacity) // 濃さ
-            customTarget.layer.shadowRadius = CGFloat(12) // ぼかし量
+            if let properties = value as? ShadowProperties {
+                customTarget.layer.shadowOffset = properties.shadowOffset
+                customTarget.layer.shadowRadius = properties.shadowRadius
+
+                let shadowOpacity = isOn ? properties.shadowOpacity : 0.0
+                customTarget.layer.shadowOpacity = shadowOpacity
+            }
         default:
             ()
         }
