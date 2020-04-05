@@ -18,7 +18,7 @@ class ViewViewModel {
     private var currentRadiusValue: Double = 12
     private var currentShadowOffset: CGSize = CGSize(width: 0, height: 0)
     private var currentShadowOpacity: Float = 0.7
-    private var currentShadowRadius: CGFloat = 5
+    private var currentShadowRadius: Double = 5
     
     func numberOfRows() -> Int {
         return properties.count
@@ -127,5 +127,5 @@ class ViewViewModel {
 struct ShadowProperties {
     let shadowOffset: CGSize
     let shadowOpacity: Float
-    let shadowRadius: CGFloat
+    let shadowRadius: Double
 }

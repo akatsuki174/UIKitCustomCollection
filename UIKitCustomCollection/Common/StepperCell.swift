@@ -29,10 +29,23 @@ class StepperCell: UITableViewCell, BaseCellProtocol {
     
     func bind(name: String, value: Double?) {
         propertyName.text = "\(name) = "
-        if let v = value {
-            propertyValue.text = "\(Int(v))"
-            stepper.value = v
+        guard let v = value else { return }
+        propertyValue.text = "\(Int(v))"
+        stepper.value = v
+    }
+    
+    func bind(name: String, ratio: Double?) {
+        propertyName.text = "\(name) = "
+        if let r = ratio {
+            propertyValue.text = "\(round(r * 10) / 10)"
+            stepper.value = r
         }
+    }
+    
+    func bind(name: String, size: CGSize) {
+        propertyName.text = "\(name) = "
+        propertyValue.text = "(\(size.width), \(size.height))"
+        stepper.value = Double(size.width)
     }
     
     @IBAction func tappedStepper(_ sender: UIStepper) {
