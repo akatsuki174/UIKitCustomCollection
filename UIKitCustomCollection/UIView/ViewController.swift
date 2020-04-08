@@ -116,8 +116,7 @@ extension ViewController: StepperCellDelegate {
             case .radiusValue:
                 customTarget.layer.cornerRadius = CGFloat(value)
             case .shadowOpacity:
-                // TODO: change opacity
-                ()
+                customTarget.layer.shadowOpacity = Float(value)
             default:
                 ()
             }
