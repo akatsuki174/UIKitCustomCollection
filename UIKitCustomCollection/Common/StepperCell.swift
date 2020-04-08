@@ -48,14 +48,17 @@ class StepperCell: UITableViewCell, BaseCellProtocol {
         stepper.value = Double(size.width)
     }
     
+    func setForPercentageValue() {
+        stepper.stepValue = 0.1
+        stepper.maximumValue = 1.0
+    }
+    
     @IBAction func tappedStepper(_ sender: UIStepper) {
-        let value = Int(sender.value)
-        propertyValue.text = "\(value)"
-        delegate?.tappedStepper(self, value: value)
+        delegate?.tappedStepper(self, value: sender.value)
     }
     
 }
 
 protocol StepperCellDelegate: AnyObject {
-    func tappedStepper(_ cell: StepperCell, value: Int)
+    func tappedStepper(_ cell: StepperCell, value: Double)
 }

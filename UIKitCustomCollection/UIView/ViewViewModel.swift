@@ -62,17 +62,12 @@ class ViewViewModel {
                 currentBorderWidth = doubleValue
             case .radiusValue:
                 currentRadiusValue = doubleValue
-            default:
-                ()
-            }
-        } else if let shadowProperties = value as? ShadowProperties {
-            switch property {
             case .shadowOffset:
-                currentShadowOffset = shadowProperties.shadowOffset
+                currentShadowOffset = CGSize(width: doubleValue, height: doubleValue)
             case .shadowOpacity:
-                currentShadowOpacity = shadowProperties.shadowOpacity
+                currentShadowOpacity = Float(doubleValue)
             case .shadowRadius:
-                currentShadowRadius = shadowProperties.shadowRadius
+                currentShadowRadius = doubleValue
             default:
                 ()
             }

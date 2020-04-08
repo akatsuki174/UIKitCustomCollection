@@ -51,6 +51,9 @@ extension ViewController: UITableViewDataSource {
                     ()
                 }
             }
+            if (property == .shadowOpacity) {
+                cell.setForPercentageValue()
+            }
             cell.delegate = self
             return cell
         }
@@ -102,7 +105,7 @@ extension ViewController: SwitchCellDelegate {
 }
 
 extension ViewController: StepperCellDelegate {
-    func tappedStepper(_ cell: StepperCell, value: Int) {
+    func tappedStepper(_ cell: StepperCell, value: Double) {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
         guard let property = viewModel.property(index: indexPath.row) else { return }
         if viewModel.getPropertyValues(property: property).isEnabled {
@@ -112,10 +115,14 @@ extension ViewController: StepperCellDelegate {
                 customTarget.layer.borderWidth = CGFloat(value)
             case .radiusValue:
                 customTarget.layer.cornerRadius = CGFloat(value)
+            case .shadowOpacity:
+                // TODO: change opacity
+                ()
             default:
                 ()
             }
         }
         viewModel.updateValue(property: property, value: Double(value))
+        tableView.reloadRows(at: [indexPath], with: .none)
     }
 }
