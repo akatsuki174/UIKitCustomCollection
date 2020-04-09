@@ -53,6 +53,8 @@ extension ViewController: UITableViewDataSource {
             }
             if (property == .shadowOpacity) {
                 cell.setForPercentageValue()
+            } else {
+                cell.setForNormalValue()
             }
             cell.delegate = self
             return cell

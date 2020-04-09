@@ -53,6 +53,11 @@ class StepperCell: UITableViewCell, BaseCellProtocol {
         stepper.maximumValue = 1.0
     }
     
+    func setForNormalValue() {
+        stepper.stepValue = 1
+        stepper.maximumValue = 50
+    }
+    
     @IBAction func tappedStepper(_ sender: UIStepper) {
         delegate?.tappedStepper(self, value: sender.value)
     }
