@@ -44,7 +44,7 @@ class StepperCell: UITableViewCell, BaseCellProtocol {
     
     func bind(name: String, size: CGSize) {
         propertyName.text = "\(name) = "
-        propertyValue.text = "(\(size.width), \(size.height))"
+        propertyValue.text = "(\(Int(size.width)), \(Int(size.height)))"
         stepper.value = Double(size.width)
     }
     
