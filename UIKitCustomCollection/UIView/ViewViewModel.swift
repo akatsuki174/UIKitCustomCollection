@@ -17,7 +17,7 @@ class ViewViewModel {
     private var currentBorderWidth: Double = 1
     private var currentRadiusValue: Double = 12
     private var currentShadowOffset: CGSize = CGSize(width: 0, height: 0)
-    private var currentShadowOpacity: Float = 0.7
+    private var currentShadowOpacity: Double = 0.7
     private var currentShadowRadius: Double = 5
     
     func numberOfRows() -> Int {
@@ -65,7 +65,7 @@ class ViewViewModel {
             case .shadowOffset:
                 currentShadowOffset = CGSize(width: doubleValue, height: doubleValue)
             case .shadowOpacity:
-                currentShadowOpacity = Float(doubleValue)
+                currentShadowOpacity = Double(doubleValue)
             case .shadowRadius:
                 currentShadowRadius = doubleValue
             default:
@@ -121,6 +121,6 @@ class ViewViewModel {
 
 struct ShadowProperties {
     let shadowOffset: CGSize
-    let shadowOpacity: Float
+    let shadowOpacity: Double
     let shadowRadius: Double
 }

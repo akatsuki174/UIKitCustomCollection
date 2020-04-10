@@ -97,7 +97,7 @@ extension ViewController: SwitchCellDelegate {
                 customTarget.layer.shadowRadius = CGFloat(properties.shadowRadius)
 
                 let shadowOpacity = isOn ? properties.shadowOpacity : 0.0
-                customTarget.layer.shadowOpacity = shadowOpacity
+                customTarget.layer.shadowOpacity = Float(shadowOpacity)
             }
         default:
             ()
