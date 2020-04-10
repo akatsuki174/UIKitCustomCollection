@@ -175,14 +175,22 @@
 		180715352428FA9100740162 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				180881852430DBA40075ECD6 /* BaseCellProtocol.swift */,
+				186466472440C2D800354DE8 /* Cell */,
 				181ED3312430F1D1002D2FD9 /* UIPart.swift */,
-				180881812430A8EE0075ECD6 /* StepperCell.swift */,
-				180715362428FB8600740162 /* SwitchCell.swift */,
-				180881822430A8EE0075ECD6 /* StepperCell.xib */,
-				180715372428FB8600740162 /* SwitchCell.xib */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		186466472440C2D800354DE8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				180881852430DBA40075ECD6 /* BaseCellProtocol.swift */,
+				180881812430A8EE0075ECD6 /* StepperCell.swift */,
+				180881822430A8EE0075ECD6 /* StepperCell.xib */,
+				180715362428FB8600740162 /* SwitchCell.swift */,
+				180715372428FB8600740162 /* SwitchCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
