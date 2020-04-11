@@ -65,7 +65,7 @@ class ViewViewModel {
             case .shadowOffset:
                 currentShadowOffset = CGSize(width: doubleValue, height: doubleValue)
             case .shadowOpacity:
-                currentShadowOpacity = Double(doubleValue)
+                currentShadowOpacity = doubleValue
             case .shadowRadius:
                 currentShadowRadius = doubleValue
             default:
