@@ -127,11 +127,12 @@
 			children = (
 				1807152B2424395700740162 /* Top */,
 				1807152C24243A1F00740162 /* UIView */,
-				180715352428FA9100740162 /* Common */,
+				186466472440C2D800354DE8 /* Cell */,
 				180714F424225F9500740162 /* AppDelegate.swift */,
-				180714F624225F9500740162 /* SceneDelegate.swift */,
-				1807153324272A6D00740162 /* CustomPattern.swift */,
 				1864664A2441EB5900354DE8 /* PropertyEnumProtocol.swift */,
+				180714F624225F9500740162 /* SceneDelegate.swift */,
+				186466482440C33000354DE8 /* StringExtentions.swift */,
+				181ED3312430F1D1002D2FD9 /* UIPart.swift */,
 				180714FD24225F9800740162 /* Assets.xcassets */,
 				180714FF24225F9800740162 /* LaunchScreen.storyboard */,
 				1807150224225F9800740162 /* Info.plist */,
@@ -177,20 +178,11 @@
 			path = UIView;
 			sourceTree = "<group>";
 		};
-		180715352428FA9100740162 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				186466472440C2D800354DE8 /* Cell */,
-				186466482440C33000354DE8 /* StringExtentions.swift */,
-				181ED3312430F1D1002D2FD9 /* UIPart.swift */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
 		186466472440C2D800354DE8 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				180881852430DBA40075ECD6 /* BaseCellProtocol.swift */,
+				1807153324272A6D00740162 /* CustomPattern.swift */,
 				180881812430A8EE0075ECD6 /* StepperCell.swift */,
 				180881822430A8EE0075ECD6 /* StepperCell.xib */,
 				180715362428FB8600740162 /* SwitchCell.swift */,
