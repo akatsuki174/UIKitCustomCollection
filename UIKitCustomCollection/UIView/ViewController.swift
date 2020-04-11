@@ -27,7 +27,7 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let property = viewModel.property(index: indexPath.row) else { return UITableViewCell() }
         let propertyPattern = property.customPattern()
-        let propertyName = property.name()
+        let propertyName = property.name
         let values = viewModel.getPropertyValues(property: property)
 
         if propertyPattern == .switch {

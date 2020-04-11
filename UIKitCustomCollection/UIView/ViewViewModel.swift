@@ -74,7 +74,7 @@ class ViewViewModel {
         }
     }
     
-    enum ViewProperty: String, CaseIterable {
+    enum ViewProperty: String, CaseIterable, PropertyEnumProtocol {
         case backgroundColor
         case border
         case borderWidth
@@ -84,29 +84,6 @@ class ViewViewModel {
         case shadowOffset
         case shadowOpacity // 濃さ
         case shadowRadius // ぼかし量
-        
-        func name() -> String {
-            switch self {
-            case .backgroundColor:
-                return "background color"
-            case .border:
-                return "border"
-            case .borderWidth:
-                return "border width"
-            case .radius:
-                return "radius"
-            case .radiusValue:
-                return "radius value"
-            case .shadow:
-                return "shadow"
-            case .shadowOffset:
-                return "shadow offset"
-            case .shadowOpacity:
-                return "shadow opacity"
-            case .shadowRadius:
-                return "shadow radius"
-            }
-        }
         
         func customPattern() -> CustomPattern {
             switch self {

@@ -26,6 +26,8 @@
 		180881842430A8EE0075ECD6 /* StepperCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180881822430A8EE0075ECD6 /* StepperCell.xib */; };
 		180881862430DBA40075ECD6 /* BaseCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180881852430DBA40075ECD6 /* BaseCellProtocol.swift */; };
 		181ED3322430F1D1002D2FD9 /* UIPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181ED3312430F1D1002D2FD9 /* UIPart.swift */; };
+		186466492440C33000354DE8 /* StringExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186466482440C33000354DE8 /* StringExtentions.swift */; };
+		1864664B2441EB5900354DE8 /* PropertyEnumProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1864664A2441EB5900354DE8 /* PropertyEnumProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		180881822430A8EE0075ECD6 /* StepperCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StepperCell.xib; sourceTree = "<group>"; };
 		180881852430DBA40075ECD6 /* BaseCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCellProtocol.swift; sourceTree = "<group>"; };
 		181ED3312430F1D1002D2FD9 /* UIPart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPart.swift; sourceTree = "<group>"; };
+		186466482440C33000354DE8 /* StringExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtentions.swift; sourceTree = "<group>"; };
+		1864664A2441EB5900354DE8 /* PropertyEnumProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyEnumProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,7 @@
 				180714F424225F9500740162 /* AppDelegate.swift */,
 				180714F624225F9500740162 /* SceneDelegate.swift */,
 				1807153324272A6D00740162 /* CustomPattern.swift */,
+				1864664A2441EB5900354DE8 /* PropertyEnumProtocol.swift */,
 				180714FD24225F9800740162 /* Assets.xcassets */,
 				180714FF24225F9800740162 /* LaunchScreen.storyboard */,
 				1807150224225F9800740162 /* Info.plist */,
@@ -176,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				186466472440C2D800354DE8 /* Cell */,
+				186466482440C33000354DE8 /* StringExtentions.swift */,
 				181ED3312430F1D1002D2FD9 /* UIPart.swift */,
 			);
 			path = Common;
@@ -336,6 +342,8 @@
 				180714F524225F9500740162 /* AppDelegate.swift in Sources */,
 				181ED3322430F1D1002D2FD9 /* UIPart.swift in Sources */,
 				180714F724225F9500740162 /* SceneDelegate.swift in Sources */,
+				1864664B2441EB5900354DE8 /* PropertyEnumProtocol.swift in Sources */,
+				186466492440C33000354DE8 /* StringExtentions.swift in Sources */,
 				1807153424272A6D00740162 /* CustomPattern.swift in Sources */,
 				180881832430A8EE0075ECD6 /* StepperCell.swift in Sources */,
 			);
