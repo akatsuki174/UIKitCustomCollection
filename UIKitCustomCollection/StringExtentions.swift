@@ -9,6 +9,7 @@
 import Foundation
 
 extension String {
+    // ex) hogeFuga -> hoge fuga
     func camelToSpaceSeparatedWords() -> String {
         return unicodeScalars.reduce("") {
             if CharacterSet.uppercaseLetters.contains($1) {
