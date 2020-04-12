@@ -37,6 +37,11 @@ extension ViewController: UITableViewDataSource {
             return cell
         } else if propertyPattern == .stepper {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: StepperCell.reuseIdentifier) as? StepperCell else { fatalError() }
+            if (property == .shadowOpacity) {
+                cell.setForPercentageValue()
+            } else {
+                cell.setForNormalValue()
+            }
             if let value = values.value as? Double {
                 cell.bind(name: propertyName, value: value)
             } else if let shadowProperties = values.value as? ShadowProperties {
@@ -50,11 +55,6 @@ extension ViewController: UITableViewDataSource {
                 default:
                     ()
                 }
-            }
-            if (property == .shadowOpacity) {
-                cell.setForPercentageValue()
-            } else {
-                cell.setForNormalValue()
             }
             cell.delegate = self
             return cell
