@@ -39,7 +39,7 @@
                     <constraint firstAttribute="trailing" secondItem="XOW-eN-lrf" secondAttribute="trailing" constant="16" id="D6b-Zy-fZC"/>
                     <constraint firstItem="Jhc-dt-OVx" firstAttribute="leading" secondItem="zht-Vm-XGP" secondAttribute="trailing" id="I35-ZA-AzT"/>
                     <constraint firstItem="zht-Vm-XGP" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Yca-ME-5M4"/>
-                    <constraint firstItem="zht-Vm-XGP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="g4J-SE-WuG"/>
+                    <constraint firstItem="zht-Vm-XGP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="g4J-SE-WuG"/>
                     <constraint firstItem="XOW-eN-lrf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="k45-z8-jHS"/>
                     <constraint firstItem="Jhc-dt-OVx" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="oUS-tT-CDE"/>
                     <constraint firstItem="XOW-eN-lrf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Jhc-dt-OVx" secondAttribute="trailing" constant="8" id="sva-NJ-HT6"/>

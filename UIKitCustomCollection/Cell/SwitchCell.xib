@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VLV-Cf-2af">
-                        <rect key="frame" x="16" y="57.5" width="42" height="21"/>
+                        <rect key="frame" x="20" y="57.5" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -25,7 +25,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="VLV-Cf-2af" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="6lc-HO-7t6"/>
-                    <constraint firstItem="VLV-Cf-2af" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="w1p-6y-QMy"/>
+                    <constraint firstItem="VLV-Cf-2af" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="w1p-6y-QMy"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
