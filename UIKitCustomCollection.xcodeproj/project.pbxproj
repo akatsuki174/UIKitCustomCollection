@@ -28,6 +28,7 @@
 		181ED3322430F1D1002D2FD9 /* UIPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181ED3312430F1D1002D2FD9 /* UIPart.swift */; };
 		185A8D4C2444150A0002A5F5 /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A8D4B2444150A0002A5F5 /* ButtonViewController.swift */; };
 		185A8D4E2444154C0002A5F5 /* Button.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185A8D4D2444154C0002A5F5 /* Button.storyboard */; };
+		185A8D5024441D5D0002A5F5 /* ButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A8D4F24441D5D0002A5F5 /* ButtonViewModel.swift */; };
 		186466492440C33000354DE8 /* StringExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186466482440C33000354DE8 /* StringExtentions.swift */; };
 		1864664B2441EB5900354DE8 /* PropertyEnumProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1864664A2441EB5900354DE8 /* PropertyEnumProtocol.swift */; };
 /* End PBXBuildFile section */
@@ -77,6 +78,7 @@
 		181ED3312430F1D1002D2FD9 /* UIPart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPart.swift; sourceTree = "<group>"; };
 		185A8D4B2444150A0002A5F5 /* ButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
 		185A8D4D2444154C0002A5F5 /* Button.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Button.storyboard; sourceTree = "<group>"; };
+		185A8D4F24441D5D0002A5F5 /* ButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewModel.swift; sourceTree = "<group>"; };
 		186466482440C33000354DE8 /* StringExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtentions.swift; sourceTree = "<group>"; };
 		1864664A2441EB5900354DE8 /* PropertyEnumProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyEnumProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -187,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				185A8D4B2444150A0002A5F5 /* ButtonViewController.swift */,
+				185A8D4F24441D5D0002A5F5 /* ButtonViewModel.swift */,
 				185A8D4D2444154C0002A5F5 /* Button.storyboard */,
 			);
 			path = Button;
@@ -346,6 +349,7 @@
 				180881862430DBA40075ECD6 /* BaseCellProtocol.swift in Sources */,
 				180714F924225F9500740162 /* TopViewController.swift in Sources */,
 				180715322425873000740162 /* ViewViewModel.swift in Sources */,
+				185A8D5024441D5D0002A5F5 /* ButtonViewModel.swift in Sources */,
 				180714F524225F9500740162 /* AppDelegate.swift in Sources */,
 				181ED3322430F1D1002D2FD9 /* UIPart.swift in Sources */,
 				185A8D4C2444150A0002A5F5 /* ButtonViewController.swift in Sources */,
@@ -527,6 +531,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5K55PQ8BSJ;
 				INFOPLIST_FILE = UIKitCustomCollection/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -544,6 +549,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5K55PQ8BSJ;
 				INFOPLIST_FILE = UIKitCustomCollection/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
