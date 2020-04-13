@@ -34,5 +34,14 @@ class ButtonViewModel {
         case tappedTextColor
         case image
         case backgroundImage
+        
+        func customPattern() -> CustomPattern {
+            switch self {
+            case .backgroundColor, .border, .radius, .shadow, .tappedText, .tappedTextColor, .image, .backgroundImage:
+                return .switch
+            case .borderWidth, .radiusValue, .shadowOffset, .shadowOpacity, .shadowRadius:
+                return .stepper
+            }
+        }
     }
 }
