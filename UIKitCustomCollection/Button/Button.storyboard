@@ -10,7 +10,7 @@
         <!--Button View Controller-->
         <scene sceneID="ZDF-4Y-5Zt">
             <objects>
-                <viewController id="FCE-3Y-HEq" customClass="ButtonViewController" sceneMemberID="viewController">
+                <viewController id="FCE-3Y-HEq" customClass="ButtonViewController" customModule="UIKitCustomCollection" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DTJ-k0-KqE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -18,6 +18,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="48" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NoA-1a-fkm">
                                 <rect key="frame" x="0.0" y="358.5" width="414" height="537.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="FCE-3Y-HEq" id="pmh-FA-6mY"/>
+                                    <outlet property="delegate" destination="FCE-3Y-HEq" id="CSZ-Du-G8z"/>
+                                </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bHE-cF-jPC" userLabel="separator">
                                 <rect key="frame" x="0.0" y="357.5" width="414" height="1"/>
@@ -45,6 +49,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="j4n-YQ-06R"/>
                     </view>
+                    <connections>
+                        <outlet property="customTarget" destination="p7b-AN-8zb" id="4bX-Gi-yAA"/>
+                        <outlet property="tableView" destination="NoA-1a-fkm" id="KLT-PC-7zx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btX-PK-2x2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
