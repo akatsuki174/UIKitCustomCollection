@@ -26,6 +26,8 @@
 		180881842430A8EE0075ECD6 /* StepperCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180881822430A8EE0075ECD6 /* StepperCell.xib */; };
 		180881862430DBA40075ECD6 /* BaseCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180881852430DBA40075ECD6 /* BaseCellProtocol.swift */; };
 		181ED3322430F1D1002D2FD9 /* UIPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181ED3312430F1D1002D2FD9 /* UIPart.swift */; };
+		185A8D4C2444150A0002A5F5 /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A8D4B2444150A0002A5F5 /* ButtonViewController.swift */; };
+		185A8D4E2444154C0002A5F5 /* Button.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185A8D4D2444154C0002A5F5 /* Button.storyboard */; };
 		186466492440C33000354DE8 /* StringExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186466482440C33000354DE8 /* StringExtentions.swift */; };
 		1864664B2441EB5900354DE8 /* PropertyEnumProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1864664A2441EB5900354DE8 /* PropertyEnumProtocol.swift */; };
 /* End PBXBuildFile section */
@@ -73,6 +75,8 @@
 		180881822430A8EE0075ECD6 /* StepperCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StepperCell.xib; sourceTree = "<group>"; };
 		180881852430DBA40075ECD6 /* BaseCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCellProtocol.swift; sourceTree = "<group>"; };
 		181ED3312430F1D1002D2FD9 /* UIPart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPart.swift; sourceTree = "<group>"; };
+		185A8D4B2444150A0002A5F5 /* ButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
+		185A8D4D2444154C0002A5F5 /* Button.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Button.storyboard; sourceTree = "<group>"; };
 		186466482440C33000354DE8 /* StringExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtentions.swift; sourceTree = "<group>"; };
 		1864664A2441EB5900354DE8 /* PropertyEnumProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyEnumProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,6 +131,7 @@
 			children = (
 				1807152B2424395700740162 /* Top */,
 				1807152C24243A1F00740162 /* UIView */,
+				185A8D4A244414D90002A5F5 /* Button */,
 				186466472440C2D800354DE8 /* Cell */,
 				180714F424225F9500740162 /* AppDelegate.swift */,
 				1864664A2441EB5900354DE8 /* PropertyEnumProtocol.swift */,
@@ -176,6 +181,15 @@
 				1807152F24243A9600740162 /* View.storyboard */,
 			);
 			path = UIView;
+			sourceTree = "<group>";
+		};
+		185A8D4A244414D90002A5F5 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				185A8D4B2444150A0002A5F5 /* ButtonViewController.swift */,
+				185A8D4D2444154C0002A5F5 /* Button.storyboard */,
+			);
+			path = Button;
 			sourceTree = "<group>";
 		};
 		186466472440C2D800354DE8 /* Cell */ = {
@@ -297,6 +311,7 @@
 			files = (
 				1807150124225F9800740162 /* LaunchScreen.storyboard in Resources */,
 				180881842430A8EE0075ECD6 /* StepperCell.xib in Resources */,
+				185A8D4E2444154C0002A5F5 /* Button.storyboard in Resources */,
 				1807153024243A9600740162 /* View.storyboard in Resources */,
 				180714FE24225F9800740162 /* Assets.xcassets in Resources */,
 				180714FC24225F9500740162 /* Top.storyboard in Resources */,
@@ -333,6 +348,7 @@
 				180715322425873000740162 /* ViewViewModel.swift in Sources */,
 				180714F524225F9500740162 /* AppDelegate.swift in Sources */,
 				181ED3322430F1D1002D2FD9 /* UIPart.swift in Sources */,
+				185A8D4C2444150A0002A5F5 /* ButtonViewController.swift in Sources */,
 				180714F724225F9500740162 /* SceneDelegate.swift in Sources */,
 				1864664B2441EB5900354DE8 /* PropertyEnumProtocol.swift in Sources */,
 				186466492440C33000354DE8 /* StringExtentions.swift in Sources */,
