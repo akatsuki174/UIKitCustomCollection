@@ -6,10 +6,23 @@
 //  Copyright © 2020 akatsuki. All rights reserved.
 //
 
-import Foundation
+import CoreGraphics
 
 class ButtonViewModel {
     private let properties = ButtonProperty.allCases
+    private var isEnableBackgroundColor = true
+    private var isEnableBorder = false
+    private var isEnableRadius = false
+    private var isEnableShadow = false
+    private var isEnableTappedText = false
+    private var isEnabletappedTextColor = false
+    private var isEnableImage = false
+    private var isEnableBackgroundImage = false
+    private var currentBorderWidth: Double = 1
+    private var currentRadiusValue: Double = 12
+    private var currentShadowOffset: CGSize = CGSize(width: 0, height: 0)
+    private var currentShadowOpacity: Double = 0.7
+    private var currentShadowRadius: Double = 5
     
     func numberOfRows() -> Int {
         return properties.count
@@ -18,6 +31,27 @@ class ButtonViewModel {
     func property(index: Int) -> ButtonProperty? {
         if index >= properties.count { return nil }
         return properties[index]
+    }
+    
+    func getPropertyValues(property: ButtonProperty) -> (isEnabled: Bool, value: Any?) {
+        switch property {
+        case .backgroundColor:
+            return (isEnableBackgroundColor, nil)
+        case .border, .borderWidth:
+            return (isEnableBorder, currentBorderWidth)
+        case .radius, .radiusValue:
+            return (isEnableRadius, currentRadiusValue)
+        case .shadow, .shadowOffset, .shadowOpacity, .shadowRadius:
+            return (isEnableShadow, ShadowProperties(shadowOffset: currentShadowOffset, shadowOpacity: currentShadowOpacity, shadowRadius: currentShadowRadius))
+        case .tappedText:
+            return (isEnableTappedText, nil)
+        case .tappedTextColor:
+            return (isEnabletappedTextColor, nil)
+        case .image:
+            return (isEnableImage, nil)
+        case .backgroundImage:
+            return (isEnableBackgroundImage, nil)
+        }
     }
     
     enum ButtonProperty: String, CaseIterable, PropertyEnumProtocol {
