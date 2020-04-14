@@ -95,9 +95,3 @@ class ViewViewModel {
         }
     }
 }
-
-struct ShadowProperties {
-    let shadowOffset: CGSize
-    let shadowOpacity: Double
-    let shadowRadius: Double
-}
