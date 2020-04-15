@@ -64,9 +64,15 @@ extension ButtonViewController: SwitchCellDelegate {
     func tappedSwitch(_ cell: SwitchCell, and isOn: Bool) {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
         guard let property = viewModel.property(index: indexPath.row) else { return }
+        let value = viewModel.getPropertyValues(property: property).value ?? 0
         switch property {
         case .backgroundColor:
             customTarget.backgroundColor = isOn ? UIColor.systemTeal : UIColor.clear
+        case .border:
+            customTarget.layer.borderColor = UIColor.black.cgColor
+            if let value = value as? Double {
+                customTarget.layer.borderWidth = CGFloat(isOn ? value : 0)
+            }
         default:
             ()
         }
