@@ -28,9 +28,11 @@ extension ButtonViewController: UITableViewDataSource {
         guard let property = viewModel.property(index: indexPath.row) else { return UITableViewCell() }
         let propertyPattern = property.customPattern()
         let propertyName = property.name
+        let values = viewModel.getPropertyValues(property: property)
+        
         if propertyPattern == .switch {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: SwitchCell.reuseIdentifier) as? SwitchCell else { fatalError() }
-            cell.bind(name: propertyName, isEnable: true)
+            cell.bind(name: propertyName, isEnable: values.isEnabled)
             cell.delegate = self
             return cell
         } else if propertyPattern == .stepper {
@@ -60,7 +62,15 @@ extension ButtonViewController: UITableViewDelegate {
 
 extension ButtonViewController: SwitchCellDelegate {
     func tappedSwitch(_ cell: SwitchCell, and isOn: Bool) {
-
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        guard let property = viewModel.property(index: indexPath.row) else { return }
+        switch property {
+        case .backgroundColor:
+            customTarget.backgroundColor = isOn ? UIColor.systemTeal : UIColor.clear
+        default:
+            ()
+        }
+        viewModel.updateValue(property: property, value: isOn)
     }
 }
 

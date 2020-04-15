@@ -10,7 +10,7 @@ import CoreGraphics
 
 class ButtonViewModel {
     private let properties = ButtonProperty.allCases
-    private var isEnableBackgroundColor = true
+    private var isEnableBackgroundColor = false
     private var isEnableBorder = false
     private var isEnableRadius = false
     private var isEnableShadow = false
@@ -51,6 +51,38 @@ class ButtonViewModel {
             return (isEnableImage, nil)
         case .backgroundImage:
             return (isEnableBackgroundImage, nil)
+        }
+    }
+    
+    func updateValue(property: ButtonProperty, value: Any) {
+        if let boolValue = value as? Bool {
+            switch property {
+            case .backgroundColor:
+                isEnableBackgroundColor = boolValue
+            case .border:
+                isEnableBorder = boolValue
+            case .radius:
+                isEnableRadius = boolValue
+            case .shadow:
+                isEnableShadow = boolValue
+            default:
+                ()
+            }
+        } else if let doubleValue = value as? Double {
+            switch property {
+            case .borderWidth:
+                currentBorderWidth = doubleValue
+            case .radiusValue:
+                currentRadiusValue = doubleValue
+            case .shadowOffset:
+                currentShadowOffset = CGSize(width: doubleValue, height: doubleValue)
+            case .shadowOpacity:
+                currentShadowOpacity = doubleValue
+            case .shadowRadius:
+                currentShadowRadius = doubleValue
+            default:
+                ()
+            }
         }
     }
     
