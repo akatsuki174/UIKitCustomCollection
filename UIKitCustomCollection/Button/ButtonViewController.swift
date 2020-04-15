@@ -75,6 +75,10 @@ extension ButtonViewController: SwitchCellDelegate {
             if let value = value as? Double {
                 customTarget.layer.borderWidth = CGFloat(isOn ? value : 0)
             }
+        case .radius:
+            if let value = value as? Double {
+                customTarget.layer.cornerRadius = CGFloat(isOn ? value : 0)
+            }
         default:
             ()
         }
