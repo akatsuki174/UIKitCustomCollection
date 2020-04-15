@@ -36,15 +36,17 @@ extension ButtonViewController: UITableViewDataSource {
             cell.delegate = self
             return cell
         } else if propertyPattern == .stepper {
-           guard let cell = tableView.dequeueReusableCell(withIdentifier: StepperCell.reuseIdentifier) as? StepperCell else { fatalError() }
-           if (property == .shadowOpacity) {
-               cell.setForPercentageValue()
-           } else {
-               cell.setForNormalValue()
-           }
-           cell.bind(name: propertyName, value: 1)
-           cell.delegate = self
-           return cell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: StepperCell.reuseIdentifier) as? StepperCell else { fatalError() }
+            if (property == .shadowOpacity) {
+                cell.setForPercentageValue()
+            } else {
+                cell.setForNormalValue()
+            }
+            if let value = values.value as? Double {
+                cell.bind(name: propertyName, value: value)
+            }
+            cell.delegate = self
+            return cell
         }
         return UITableViewCell()
     }
@@ -82,6 +84,18 @@ extension ButtonViewController: SwitchCellDelegate {
 
 extension ButtonViewController: StepperCellDelegate {
     func tappedStepper(_ cell: StepperCell, value: Double) {
-
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        guard let property = viewModel.property(index: indexPath.row) else { return }
+        if viewModel.getPropertyValues(property: property).isEnabled {
+            switch property {
+            case .borderWidth:
+                customTarget.layer.borderColor = UIColor.black.cgColor
+                customTarget.layer.borderWidth = CGFloat(value)
+            default:
+                ()
+            }
+        }
+        viewModel.updateValue(property: property, value: Double(value))
+        tableView.reloadRows(at: [indexPath], with: .none)
     }
 }
