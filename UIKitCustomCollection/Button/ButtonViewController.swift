@@ -44,6 +44,17 @@ extension ButtonViewController: UITableViewDataSource {
             }
             if let value = values.value as? Double {
                 cell.bind(name: propertyName, value: value)
+            } else if let shadowProperties = values.value as? ShadowProperties {
+                switch property {
+                case .shadowOffset:
+                    cell.bind(name: propertyName, size: shadowProperties.shadowOffset)
+                case .shadowOpacity:
+                    cell.bind(name: propertyName, ratio: Double(shadowProperties.shadowOpacity))
+                case .shadowRadius:
+                    cell.bind(name: propertyName, value: shadowProperties.shadowRadius)
+                default:
+                    ()
+                }
             }
             cell.delegate = self
             return cell
