@@ -95,6 +95,8 @@ extension ButtonViewController: StepperCellDelegate {
             case .borderWidth:
                 customTarget.layer.borderColor = UIColor.black.cgColor
                 customTarget.layer.borderWidth = CGFloat(value)
+            case .radiusValue:
+                customTarget.layer.cornerRadius = CGFloat(value)
             default:
                 ()
             }
