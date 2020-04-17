@@ -90,6 +90,15 @@ extension ButtonViewController: SwitchCellDelegate {
             if let value = value as? Double {
                 customTarget.layer.cornerRadius = CGFloat(isOn ? value : 0)
             }
+        case .shadow:
+            customTarget.layer.shadowColor = UIColor.black.cgColor
+            if let properties = value as? ShadowProperties {
+                customTarget.layer.shadowOffset = properties.shadowOffset
+                customTarget.layer.shadowRadius = CGFloat(properties.shadowRadius)
+                
+                let shadowOpacity = isOn ? properties.shadowOpacity : 0.0
+                customTarget.layer.shadowOpacity = Float(shadowOpacity)
+            }
         default:
             ()
         }
