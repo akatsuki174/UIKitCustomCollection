@@ -16,6 +16,7 @@ class ButtonViewModel {
     private var isEnableShadow = false
     private var isEnableTappedText = false
     private var isEnabletappedTextColor = false
+    private var isEnableDisabledText = false
     private var isEnableImage = false
     private var isEnableBackgroundImage = false
     private var currentBorderWidth: Double = 1
@@ -47,6 +48,8 @@ class ButtonViewModel {
             return (isEnableTappedText, nil)
         case .tappedTextColor:
             return (isEnabletappedTextColor, nil)
+        case .disabledText:
+            return (isEnableDisabledText, nil)
         case .image:
             return (isEnableImage, nil)
         case .backgroundImage:
@@ -69,6 +72,8 @@ class ButtonViewModel {
                 isEnableTappedText = boolValue
             case .tappedTextColor:
                 isEnabletappedTextColor = boolValue
+            case .disabledText:
+                isEnableDisabledText = boolValue
             default:
                 ()
             }
@@ -102,12 +107,13 @@ class ButtonViewModel {
         case shadowRadius // ぼかし量
         case tappedText
         case tappedTextColor
+        case disabledText
         case image
         case backgroundImage
         
         func customPattern() -> CustomPattern {
             switch self {
-            case .backgroundColor, .border, .radius, .shadow, .tappedText, .tappedTextColor, .image, .backgroundImage:
+            case .backgroundColor, .border, .radius, .shadow, .tappedText, .tappedTextColor, .disabledText, .image, .backgroundImage:
                 return .switch
             case .borderWidth, .radiusValue, .shadowOffset, .shadowOpacity, .shadowRadius:
                 return .stepper
