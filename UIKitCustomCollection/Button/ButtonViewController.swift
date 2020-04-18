@@ -102,6 +102,9 @@ extension ButtonViewController: SwitchCellDelegate {
         case .tappedText:
             let text = isOn ? "tapped" : "Button"
             customTarget.setTitle(text, for: .highlighted)
+        case .tappedTextColor:
+            let color = isOn ? UIColor.systemRed : UIColor.systemBlue
+            customTarget.setTitleColor(color, for: .highlighted)
         default:
             ()
         }
