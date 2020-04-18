@@ -99,6 +99,9 @@ extension ButtonViewController: SwitchCellDelegate {
                 let shadowOpacity = isOn ? properties.shadowOpacity : 0.0
                 customTarget.layer.shadowOpacity = Float(shadowOpacity)
             }
+        case .tappedText:
+            let text = isOn ? "tapped" : "Button"
+            customTarget.setTitle(text, for: .highlighted)
         default:
             ()
         }
