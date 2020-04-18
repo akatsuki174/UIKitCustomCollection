@@ -65,6 +65,10 @@ class ButtonViewModel {
                 isEnableRadius = boolValue
             case .shadow:
                 isEnableShadow = boolValue
+            case .tappedText:
+                isEnableTappedText = boolValue
+            case .tappedTextColor:
+                isEnabletappedTextColor = boolValue
             default:
                 ()
             }
