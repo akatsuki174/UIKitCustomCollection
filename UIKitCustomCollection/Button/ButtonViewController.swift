@@ -121,6 +121,8 @@ extension ButtonViewController: StepperCellDelegate {
                 customTarget.layer.shadowOffset = CGSize(width: value, height: value)
             case .shadowOpacity:
                 customTarget.layer.shadowOpacity = Float(value)
+            case .shadowRadius:
+                customTarget.layer.shadowRadius = CGFloat(value)
             default:
                 ()
             }
