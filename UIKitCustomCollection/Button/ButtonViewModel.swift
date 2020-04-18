@@ -6,7 +6,7 @@
 //  Copyright © 2020 akatsuki. All rights reserved.
 //
 
-import CoreGraphics
+import UIKit
 
 class ButtonViewModel {
     private let properties = ButtonProperty.allCases
@@ -24,6 +24,8 @@ class ButtonViewModel {
     private var currentShadowOffset: CGSize = CGSize(width: 0, height: 0)
     private var currentShadowOpacity: Double = 0.7
     private var currentShadowRadius: Double = 5
+    
+    var defaultHighlightTextColor: UIColor? = nil
     
     func numberOfRows() -> Int {
         return properties.count
