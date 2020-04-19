@@ -118,6 +118,9 @@ extension ButtonViewController: SwitchCellDelegate {
             }
             let color = isOn ? UIColor.systemGray : viewModel.defaultDisabledTextColor
             customTarget.setTitleColor(color, for: .disabled)
+        case .image:
+            let image = isOn ? UIImage(systemName: "paperplane.fill") : nil
+            customTarget.setImage(image, for: .normal)
         default:
             ()
         }
