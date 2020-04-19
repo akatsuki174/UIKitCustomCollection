@@ -121,6 +121,9 @@ extension ButtonViewController: SwitchCellDelegate {
         case .image:
             let image = isOn ? UIImage(systemName: "paperplane.fill") : nil
             customTarget.setImage(image, for: .normal)
+        case .backgroundImage:
+            let image = isOn ? UIImage(named: "backgroundImage") : nil
+            customTarget.setBackgroundImage(image, for: .normal)
         default:
             ()
         }
