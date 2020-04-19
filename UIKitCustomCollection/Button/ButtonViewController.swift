@@ -112,6 +112,12 @@ extension ButtonViewController: SwitchCellDelegate {
             let text = isOn ? "disabled" : "Button"
             customTarget.setTitle(text, for: .disabled)
             customTarget.isEnabled = !isOn
+        case .disabledTextColor:
+            if viewModel.defaultDisabledTextColor == nil {
+                viewModel.defaultDisabledTextColor = customTarget.titleColor(for: .disabled)
+            }
+            let color = isOn ? UIColor.systemGray : viewModel.defaultDisabledTextColor
+            customTarget.setTitleColor(color, for: .disabled)
         default:
             ()
         }

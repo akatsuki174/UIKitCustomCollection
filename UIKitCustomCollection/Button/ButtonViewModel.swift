@@ -17,6 +17,7 @@ class ButtonViewModel {
     private var isEnableTappedText = false
     private var isEnabletappedTextColor = false
     private var isEnableDisabledText = false
+    private var isEnableDisabledTextColor = false
     private var isEnableImage = false
     private var isEnableBackgroundImage = false
     private var currentBorderWidth: Double = 1
@@ -26,6 +27,7 @@ class ButtonViewModel {
     private var currentShadowRadius: Double = 5
     
     var defaultHighlightTextColor: UIColor? = nil
+    var defaultDisabledTextColor: UIColor? = nil
     
     func numberOfRows() -> Int {
         return properties.count
@@ -52,6 +54,8 @@ class ButtonViewModel {
             return (isEnabletappedTextColor, nil)
         case .disabledText:
             return (isEnableDisabledText, nil)
+        case .disabledTextColor:
+            return (isEnableDisabledTextColor, nil)
         case .image:
             return (isEnableImage, nil)
         case .backgroundImage:
@@ -76,6 +80,8 @@ class ButtonViewModel {
                 isEnabletappedTextColor = boolValue
             case .disabledText:
                 isEnableDisabledText = boolValue
+            case .disabledTextColor:
+                isEnableDisabledTextColor = boolValue
             default:
                 ()
             }
@@ -110,12 +116,13 @@ class ButtonViewModel {
         case tappedText
         case tappedTextColor
         case disabledText
+        case disabledTextColor
         case image
         case backgroundImage
         
         func customPattern() -> CustomPattern {
             switch self {
-            case .backgroundColor, .border, .radius, .shadow, .tappedText, .tappedTextColor, .disabledText, .image, .backgroundImage:
+            case .backgroundColor, .border, .radius, .shadow, .tappedText, .tappedTextColor, .disabledText, .disabledTextColor, .image, .backgroundImage:
                 return .switch
             case .borderWidth, .radiusValue, .shadowOffset, .shadowOpacity, .shadowRadius:
                 return .stepper
