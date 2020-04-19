@@ -14,6 +14,7 @@ class ButtonViewModel {
     private var isEnableBorder = false
     private var isEnableRadius = false
     private var isEnableShadow = false
+    private var isEnableTextColor = false
     private var isEnableTappedText = false
     private var isEnabletappedTextColor = false
     private var isEnableDisabledText = false
@@ -26,7 +27,7 @@ class ButtonViewModel {
     private var currentShadowOpacity: Double = 0.7
     private var currentShadowRadius: Double = 5
     
-    var defaultHighlightTextColor: UIColor? = nil
+    var defaultTextColor: UIColor? = nil
     var defaultDisabledTextColor: UIColor? = nil
     
     func numberOfRows() -> Int {
@@ -48,6 +49,8 @@ class ButtonViewModel {
             return (isEnableRadius, currentRadiusValue)
         case .shadow, .shadowOffset, .shadowOpacity, .shadowRadius:
             return (isEnableShadow, ShadowProperties(shadowOffset: currentShadowOffset, shadowOpacity: currentShadowOpacity, shadowRadius: currentShadowRadius))
+        case .textColor:
+            return (isEnableTextColor, nil)
         case .tappedText:
             return (isEnableTappedText, nil)
         case .tappedTextColor:
@@ -74,6 +77,8 @@ class ButtonViewModel {
                 isEnableRadius = boolValue
             case .shadow:
                 isEnableShadow = boolValue
+            case .textColor:
+                isEnableTextColor = boolValue
             case .tappedText:
                 isEnableTappedText = boolValue
             case .tappedTextColor:
@@ -113,6 +118,7 @@ class ButtonViewModel {
         case shadowOffset
         case shadowOpacity // 濃さ
         case shadowRadius // ぼかし量
+        case textColor
         case tappedText
         case tappedTextColor
         case disabledText
@@ -122,7 +128,7 @@ class ButtonViewModel {
         
         func customPattern() -> CustomPattern {
             switch self {
-            case .backgroundColor, .border, .radius, .shadow, .tappedText, .tappedTextColor, .disabledText, .disabledTextColor, .image, .backgroundImage:
+            case .backgroundColor, .border, .radius, .shadow, .textColor, .tappedText, .tappedTextColor, .disabledText, .disabledTextColor, .image, .backgroundImage:
                 return .switch
             case .borderWidth, .radiusValue, .shadowOffset, .shadowOpacity, .shadowRadius:
                 return .stepper
