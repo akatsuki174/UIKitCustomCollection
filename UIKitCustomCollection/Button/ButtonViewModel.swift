@@ -87,6 +87,10 @@ class ButtonViewModel {
                 isEnableDisabledText = boolValue
             case .disabledTextColor:
                 isEnableDisabledTextColor = boolValue
+            case .image:
+                isEnableImage = boolValue
+            case .backgroundImage:
+                isEnableBackgroundImage = boolValue
             default:
                 ()
             }
