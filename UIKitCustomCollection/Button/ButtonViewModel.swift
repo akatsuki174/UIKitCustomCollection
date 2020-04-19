@@ -1,35 +1,45 @@
 //
-//  ViewViewModel.swift
+//  ButtonViewModel.swift
 //  UIKitCustomCollection
 //
-//  Created by Akatsuki on 2020/03/21.
+//  Created by Akatsuki on 2020/04/13.
 //  Copyright © 2020 akatsuki. All rights reserved.
 //
 
-import CoreGraphics
+import UIKit
 
-class ViewViewModel {
-    private let properties = ViewProperty.allCases
-    private var isEnableBackgroundColor = true
+class ButtonViewModel {
+    private let properties = ButtonProperty.allCases
+    private var isEnableBackgroundColor = false
     private var isEnableBorder = false
     private var isEnableRadius = false
     private var isEnableShadow = false
+    private var isEnableTextColor = false
+    private var isEnableTappedText = false
+    private var isEnabletappedTextColor = false
+    private var isEnableDisabledText = false
+    private var isEnableDisabledTextColor = false
+    private var isEnableImage = false
+    private var isEnableBackgroundImage = false
     private var currentBorderWidth: Double = 1
     private var currentRadiusValue: Double = 12
     private var currentShadowOffset: CGSize = CGSize(width: 0, height: 0)
     private var currentShadowOpacity: Double = 0.7
     private var currentShadowRadius: Double = 5
     
+    var defaultTextColor: UIColor? = nil
+    var defaultDisabledTextColor: UIColor? = nil
+    
     func numberOfRows() -> Int {
         return properties.count
     }
     
-    func property(index: Int) -> ViewProperty? {
+    func property(index: Int) -> ButtonProperty? {
         if index >= properties.count { return nil }
         return properties[index]
     }
     
-    func getPropertyValues(property: ViewProperty) -> (isEnabled: Bool, value: Any?) {
+    func getPropertyValues(property: ButtonProperty) -> (isEnabled: Bool, value: Any?) {
         switch property {
         case .backgroundColor:
             return (isEnableBackgroundColor, nil)
@@ -39,10 +49,24 @@ class ViewViewModel {
             return (isEnableRadius, currentRadiusValue)
         case .shadow, .shadowOffset, .shadowOpacity, .shadowRadius:
             return (isEnableShadow, ShadowProperties(shadowOffset: currentShadowOffset, shadowOpacity: currentShadowOpacity, shadowRadius: currentShadowRadius))
+        case .textColor:
+            return (isEnableTextColor, nil)
+        case .tappedText:
+            return (isEnableTappedText, nil)
+        case .tappedTextColor:
+            return (isEnabletappedTextColor, nil)
+        case .disabledText:
+            return (isEnableDisabledText, nil)
+        case .disabledTextColor:
+            return (isEnableDisabledTextColor, nil)
+        case .image:
+            return (isEnableImage, nil)
+        case .backgroundImage:
+            return (isEnableBackgroundImage, nil)
         }
     }
     
-    func updateValue(property: ViewProperty, value: Any) {
+    func updateValue(property: ButtonProperty, value: Any) {
         if let boolValue = value as? Bool {
             switch property {
             case .backgroundColor:
@@ -53,6 +77,20 @@ class ViewViewModel {
                 isEnableRadius = boolValue
             case .shadow:
                 isEnableShadow = boolValue
+            case .textColor:
+                isEnableTextColor = boolValue
+            case .tappedText:
+                isEnableTappedText = boolValue
+            case .tappedTextColor:
+                isEnabletappedTextColor = boolValue
+            case .disabledText:
+                isEnableDisabledText = boolValue
+            case .disabledTextColor:
+                isEnableDisabledTextColor = boolValue
+            case .image:
+                isEnableImage = boolValue
+            case .backgroundImage:
+                isEnableBackgroundImage = boolValue
             default:
                 ()
             }
@@ -74,7 +112,7 @@ class ViewViewModel {
         }
     }
     
-    enum ViewProperty: String, CaseIterable, PropertyEnumProtocol {
+    enum ButtonProperty: String, CaseIterable, PropertyEnumProtocol {
         case backgroundColor
         case border
         case borderWidth
@@ -84,10 +122,17 @@ class ViewViewModel {
         case shadowOffset
         case shadowOpacity // 濃さ
         case shadowRadius // ぼかし量
+        case textColor
+        case tappedText
+        case tappedTextColor
+        case disabledText
+        case disabledTextColor
+        case image
+        case backgroundImage
         
         func customPattern() -> CustomPattern {
             switch self {
-            case .backgroundColor, .border, .radius, .shadow:
+            case .backgroundColor, .border, .radius, .shadow, .textColor, .tappedText, .tappedTextColor, .disabledText, .disabledTextColor, .image, .backgroundImage:
                 return .switch
             case .borderWidth, .radiusValue, .shadowOffset, .shadowOpacity, .shadowRadius:
                 return .stepper

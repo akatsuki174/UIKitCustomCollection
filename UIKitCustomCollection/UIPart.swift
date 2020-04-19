@@ -10,7 +10,7 @@ import UIKit
 
 enum UIPart: String, CaseIterable {
     case view
-//    case button
+    case button
 //    case label
 //    case textField
 //    case textView
@@ -24,8 +24,8 @@ enum UIPart: String, CaseIterable {
         switch self {
         case .view:
             return "UIView"
-//        case .button:
-//            return "UIButton"
+        case .button:
+            return "UIButton"
 //        case .label:
 //            return "UILabel"
 //        case .textField:

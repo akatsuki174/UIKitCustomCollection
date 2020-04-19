@@ -28,9 +28,9 @@ class SwitchCell: UITableViewCell, BaseCellProtocol {
         propertyName.text = name
         if accessoryView == nil {
             accessoryView = propertySwitch
-            propertySwitch.isOn = isEnable ?? false
-            propertySwitch.addTarget(self, action: #selector(tappedSwitch(sender:)), for: .valueChanged)
         }
+        propertySwitch.isOn = isEnable ?? false
+        propertySwitch.addTarget(self, action: #selector(tappedSwitch(sender:)), for: .valueChanged)
     }
     
     @objc func tappedSwitch(sender: UISwitch) {
