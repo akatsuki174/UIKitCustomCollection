@@ -32,6 +32,8 @@
 		185A8D522445EB370002A5F5 /* ShadowProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A8D512445EB370002A5F5 /* ShadowProperties.swift */; };
 		186466492440C33000354DE8 /* StringExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186466482440C33000354DE8 /* StringExtentions.swift */; };
 		1864664B2441EB5900354DE8 /* PropertyEnumProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1864664A2441EB5900354DE8 /* PropertyEnumProtocol.swift */; };
+		18BEF876244DE6F0000DFFB7 /* LabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BEF875244DE6F0000DFFB7 /* LabelViewController.swift */; };
+		18BEF878244DE707000DFFB7 /* Label.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BEF877244DE707000DFFB7 /* Label.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		185A8D512445EB370002A5F5 /* ShadowProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowProperties.swift; sourceTree = "<group>"; };
 		186466482440C33000354DE8 /* StringExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtentions.swift; sourceTree = "<group>"; };
 		1864664A2441EB5900354DE8 /* PropertyEnumProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyEnumProtocol.swift; sourceTree = "<group>"; };
+		18BEF875244DE6F0000DFFB7 /* LabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelViewController.swift; sourceTree = "<group>"; };
+		18BEF877244DE707000DFFB7 /* Label.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Label.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,7 @@
 				1807152B2424395700740162 /* Top */,
 				1807152C24243A1F00740162 /* UIView */,
 				185A8D4A244414D90002A5F5 /* Button */,
+				18BEF874244DE6D1000DFFB7 /* Label */,
 				186466472440C2D800354DE8 /* Cell */,
 				180714F424225F9500740162 /* AppDelegate.swift */,
 				1864664A2441EB5900354DE8 /* PropertyEnumProtocol.swift */,
@@ -209,6 +214,15 @@
 				180715372428FB8600740162 /* SwitchCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		18BEF874244DE6D1000DFFB7 /* Label */ = {
+			isa = PBXGroup;
+			children = (
+				18BEF875244DE6F0000DFFB7 /* LabelViewController.swift */,
+				18BEF877244DE707000DFFB7 /* Label.storyboard */,
+			);
+			path = Label;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,6 +336,7 @@
 				180714FE24225F9800740162 /* Assets.xcassets in Resources */,
 				180714FC24225F9500740162 /* Top.storyboard in Resources */,
 				180715392428FB8600740162 /* SwitchCell.xib in Resources */,
+				18BEF878244DE707000DFFB7 /* Label.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +365,7 @@
 				180715252422638B00740162 /* TopViewModel.swift in Sources */,
 				180715382428FB8600740162 /* SwitchCell.swift in Sources */,
 				180881862430DBA40075ECD6 /* BaseCellProtocol.swift in Sources */,
+				18BEF876244DE6F0000DFFB7 /* LabelViewController.swift in Sources */,
 				185A8D522445EB370002A5F5 /* ShadowProperties.swift in Sources */,
 				180714F924225F9500740162 /* TopViewController.swift in Sources */,
 				180715322425873000740162 /* ViewViewModel.swift in Sources */,
