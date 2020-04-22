@@ -16,7 +16,7 @@
 		1807150C24225F9800740162 /* UIKitCustomCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1807150B24225F9800740162 /* UIKitCustomCollectionTests.swift */; };
 		1807151724225F9900740162 /* UIKitCustomCollectionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1807151624225F9900740162 /* UIKitCustomCollectionUITests.swift */; };
 		180715252422638B00740162 /* TopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180715242422638B00740162 /* TopViewModel.swift */; };
-		1807152E24243A7200740162 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1807152D24243A7200740162 /* ViewController.swift */; };
+		1807152E24243A7200740162 /* ViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1807152D24243A7200740162 /* ViewViewController.swift */; };
 		1807153024243A9600740162 /* View.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1807152F24243A9600740162 /* View.storyboard */; };
 		180715322425873000740162 /* ViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180715312425873000740162 /* ViewViewModel.swift */; };
 		1807153424272A6D00740162 /* CustomPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1807153324272A6D00740162 /* CustomPattern.swift */; };
@@ -67,7 +67,7 @@
 		1807151624225F9900740162 /* UIKitCustomCollectionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitCustomCollectionUITests.swift; sourceTree = "<group>"; };
 		1807151824225F9900740162 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		180715242422638B00740162 /* TopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewModel.swift; sourceTree = "<group>"; };
-		1807152D24243A7200740162 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1807152D24243A7200740162 /* ViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewViewController.swift; sourceTree = "<group>"; };
 		1807152F24243A9600740162 /* View.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = View.storyboard; sourceTree = "<group>"; };
 		180715312425873000740162 /* ViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewViewModel.swift; sourceTree = "<group>"; };
 		1807153324272A6D00740162 /* CustomPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPattern.swift; sourceTree = "<group>"; };
@@ -181,7 +181,7 @@
 		1807152C24243A1F00740162 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
-				1807152D24243A7200740162 /* ViewController.swift */,
+				1807152D24243A7200740162 /* ViewViewController.swift */,
 				180715312425873000740162 /* ViewViewModel.swift */,
 				1807152F24243A9600740162 /* View.storyboard */,
 			);
@@ -346,7 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1807152E24243A7200740162 /* ViewController.swift in Sources */,
+				1807152E24243A7200740162 /* ViewViewController.swift in Sources */,
 				180715252422638B00740162 /* TopViewModel.swift in Sources */,
 				180715382428FB8600740162 /* SwitchCell.swift in Sources */,
 				180881862430DBA40075ECD6 /* BaseCellProtocol.swift in Sources */,
