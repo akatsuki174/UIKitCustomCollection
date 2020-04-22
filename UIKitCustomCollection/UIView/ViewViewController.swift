@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewViewController: UIViewController {
 
     @IBOutlet weak var customTarget: UIView!
     @IBOutlet weak var tableView: UITableView!
@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UITableViewDataSource {
+extension ViewViewController: UITableViewDataSource {
  
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let property = viewModel.property(index: indexPath.row) else { return UITableViewCell() }
@@ -67,13 +67,13 @@ extension ViewController: UITableViewDataSource {
     }
 }
 
-extension ViewController: UITableViewDelegate {
+extension ViewViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
-extension ViewController: SwitchCellDelegate {
+extension ViewViewController: SwitchCellDelegate {
     func tappedSwitch(_ cell: SwitchCell, and isOn: Bool) {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
         guard let property = viewModel.property(index: indexPath.row) else { return }
@@ -106,7 +106,7 @@ extension ViewController: SwitchCellDelegate {
     }
 }
 
-extension ViewController: StepperCellDelegate {
+extension ViewViewController: StepperCellDelegate {
     func tappedStepper(_ cell: StepperCell, value: Double) {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
         guard let property = viewModel.property(index: indexPath.row) else { return }
