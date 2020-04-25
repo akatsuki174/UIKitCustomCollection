@@ -7,6 +7,17 @@
 //
 
 class LabelViewModel {
+    private let properties = LabelProperty.allCases
+    
+    func numberOfRows() -> Int {
+        return properties.count
+    }
+    
+    func property(index: Int) -> LabelProperty? {
+        if index >= properties.count { return nil }
+        return properties[index]
+    }
+    
     enum LabelProperty: String, CaseIterable, PropertyEnumProtocol {
         case increaseCharacters
         case backgroundColor
@@ -24,5 +35,16 @@ class LabelViewModel {
         case textAlignment
         case baselineAdjustment
         case tappedTextColor
+
+        func customPattern() -> CustomPattern {
+            switch self {
+            case .backgroundColor, .border, .radius, .adjustsFontSizeToFitWidth, .textColor, .tappedTextColor:
+                return .switch
+            case .increaseCharacters, .borderWidth, .radiusValue, .numberOfLines, .minimumScaleFactor, .shadowOffset, .shadowColor:
+                return .stepper
+            case .lineBreakMode, .textAlignment, .baselineAdjustment:
+                return .detail
+            }
+        }
     }
 }

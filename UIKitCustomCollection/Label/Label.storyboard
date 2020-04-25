@@ -18,6 +18,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="99R-5o-xZl">
                                 <rect key="frame" x="0.0" y="358.5" width="414" height="537.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="uJ5-HN-BOY" id="f4f-Qg-fxv"/>
+                                    <outlet property="delegate" destination="uJ5-HN-BOY" id="3lo-Do-Aoj"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZl-Sd-DD1">
                                 <rect key="frame" x="186" y="94" width="42" height="21"/>
@@ -37,6 +41,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="w1c-ZW-oJI"/>
                     </view>
+                    <connections>
+                        <outlet property="customTarget" destination="PZl-Sd-DD1" id="7pe-Mc-JEa"/>
+                        <outlet property="tableView" destination="99R-5o-xZl" id="HDn-pG-06f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VQK-2f-eff" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

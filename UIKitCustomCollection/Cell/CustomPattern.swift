@@ -9,4 +9,5 @@
 enum CustomPattern: String, CaseIterable {
     case `switch`
     case stepper
+    case detail
 }
