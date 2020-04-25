@@ -29,15 +29,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wm7-VK-mMa" userLabel="separator">
+                                <rect key="frame" x="0.0" y="357.5" width="414" height="1"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="b9K-oF-78b"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="w1c-ZW-oJI" firstAttribute="trailing" secondItem="99R-5o-xZl" secondAttribute="trailing" id="0Vy-lb-MeH"/>
                             <constraint firstItem="99R-5o-xZl" firstAttribute="height" secondItem="v07-92-rE9" secondAttribute="height" multiplier="6:10" id="5dn-7Y-dEc"/>
+                            <constraint firstItem="99R-5o-xZl" firstAttribute="top" secondItem="wm7-VK-mMa" secondAttribute="bottom" id="8Mo-Zd-1Y4"/>
                             <constraint firstItem="PZl-Sd-DD1" firstAttribute="top" secondItem="w1c-ZW-oJI" secondAttribute="top" constant="50" id="GWP-FG-LO2"/>
                             <constraint firstItem="99R-5o-xZl" firstAttribute="leading" secondItem="w1c-ZW-oJI" secondAttribute="leading" id="XUJ-e7-JOf"/>
+                            <constraint firstItem="wm7-VK-mMa" firstAttribute="leading" secondItem="v07-92-rE9" secondAttribute="leading" id="c2v-v5-x8V"/>
+                            <constraint firstAttribute="trailing" secondItem="wm7-VK-mMa" secondAttribute="trailing" id="dih-8P-5Ke"/>
                             <constraint firstAttribute="bottom" secondItem="99R-5o-xZl" secondAttribute="bottom" id="eyK-7j-Mo7"/>
                             <constraint firstItem="PZl-Sd-DD1" firstAttribute="centerX" secondItem="w1c-ZW-oJI" secondAttribute="centerX" id="iJx-3J-jjL"/>
+                            <constraint firstItem="wm7-VK-mMa" firstAttribute="centerX" secondItem="v07-92-rE9" secondAttribute="centerX" id="yI4-Jb-zpp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="w1c-ZW-oJI"/>
                     </view>
