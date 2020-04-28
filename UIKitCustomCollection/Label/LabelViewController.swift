@@ -61,7 +61,7 @@ extension LabelViewController: StepperCellDelegate {
         guard let property = viewModel.property(index: indexPath.row) else { return }
         if viewModel.getPropertyValues(property: property).isEnabled {
             switch property {
-            case .increaseCharacters:
+            case .changeCharCount:
                 let currentText = customTarget.text ?? ""
                 if (currentText.count > Int(value)) {
                     customTarget.text = String(currentText.dropLast())

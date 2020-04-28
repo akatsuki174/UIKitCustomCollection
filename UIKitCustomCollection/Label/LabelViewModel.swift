@@ -21,7 +21,7 @@ class LabelViewModel {
     
     func getPropertyValues(property: LabelProperty) -> (isEnabled: Bool, value: Any?) {
         switch property {
-        case .increaseCharacters:
+        case .changeCharCount:
             return (true, currentString)
         default:
             return (true, nil)
@@ -31,7 +31,7 @@ class LabelViewModel {
     func updateValue(property: LabelProperty, value: Any) {
         if let strValue = value as? String {
             switch property {
-            case .increaseCharacters:
+            case .changeCharCount:
                 currentString = strValue
             default:
                 ()
@@ -40,7 +40,7 @@ class LabelViewModel {
     }
     
     enum LabelProperty: String, CaseIterable, PropertyEnumProtocol {
-        case increaseCharacters
+        case changeCharCount
         case backgroundColor
         case border
         case borderWidth
@@ -61,7 +61,7 @@ class LabelViewModel {
             switch self {
             case .backgroundColor, .border, .radius, .adjustsFontSizeToFitWidth, .textColor, .tappedTextColor:
                 return .switch
-            case .increaseCharacters, .borderWidth, .radiusValue, .numberOfLines, .minimumScaleFactor, .shadowOffset, .shadowColor:
+            case .changeCharCount, .borderWidth, .radiusValue, .numberOfLines, .minimumScaleFactor, .shadowOffset, .shadowColor:
                 return .stepper
             case .lineBreakMode, .textAlignment, .baselineAdjustment:
                 return .detail
