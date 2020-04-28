@@ -23,7 +23,7 @@
                                     <outlet property="delegate" destination="uJ5-HN-BOY" id="3lo-Do-Aoj"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZl-Sd-DD1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZl-Sd-DD1">
                                 <rect key="frame" x="186" y="94" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -43,6 +43,7 @@
                             <constraint firstItem="99R-5o-xZl" firstAttribute="height" secondItem="v07-92-rE9" secondAttribute="height" multiplier="6:10" id="5dn-7Y-dEc"/>
                             <constraint firstItem="99R-5o-xZl" firstAttribute="top" secondItem="wm7-VK-mMa" secondAttribute="bottom" id="8Mo-Zd-1Y4"/>
                             <constraint firstItem="PZl-Sd-DD1" firstAttribute="top" secondItem="w1c-ZW-oJI" secondAttribute="top" constant="50" id="GWP-FG-LO2"/>
+                            <constraint firstItem="w1c-ZW-oJI" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PZl-Sd-DD1" secondAttribute="trailing" constant="8" id="Su4-JN-e8Y"/>
                             <constraint firstItem="99R-5o-xZl" firstAttribute="leading" secondItem="w1c-ZW-oJI" secondAttribute="leading" id="XUJ-e7-JOf"/>
                             <constraint firstItem="wm7-VK-mMa" firstAttribute="leading" secondItem="v07-92-rE9" secondAttribute="leading" id="c2v-v5-x8V"/>
                             <constraint firstAttribute="trailing" secondItem="wm7-VK-mMa" secondAttribute="trailing" id="dih-8P-5Ke"/>

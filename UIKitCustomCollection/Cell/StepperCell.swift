@@ -28,24 +28,29 @@ class StepperCell: UITableViewCell, BaseCellProtocol {
     }
     
     func bind(name: String, value: Double?) {
-        propertyName.text = "\(name) = "
+        propertyName.text = name
         guard let v = value else { return }
-        propertyValue.text = "\(Int(v))"
+        propertyValue.text = " = \(Int(v))"
         stepper.value = v
     }
     
     func bind(name: String, ratio: Double?) {
-        propertyName.text = "\(name) = "
+        propertyName.text = name
         if let r = ratio {
-            propertyValue.text = "\(round(r * 10) / 10)"
+            propertyValue.text = " = \(round(r * 10) / 10)"
             stepper.value = r
         }
     }
     
     func bind(name: String, size: CGSize) {
-        propertyName.text = "\(name) = "
-        propertyValue.text = "(\(Int(size.width)), \(Int(size.height)))"
+        propertyName.text = name
+        propertyValue.text = " = (\(Int(size.width)), \(Int(size.height)))"
         stepper.value = Double(size.width)
+    }
+    
+    func bind(name: String, value: String) {
+        propertyName.text = name
+        stepper.value = Double(value.count)
     }
     
     func setForPercentageValue() {

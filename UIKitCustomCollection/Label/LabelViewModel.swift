@@ -8,6 +8,7 @@
 
 class LabelViewModel {
     private let properties = LabelProperty.allCases
+    private var currentString = "Label"
     
     func numberOfRows() -> Int {
         return properties.count
@@ -16,6 +17,26 @@ class LabelViewModel {
     func property(index: Int) -> LabelProperty? {
         if index >= properties.count { return nil }
         return properties[index]
+    }
+    
+    func getPropertyValues(property: LabelProperty) -> (isEnabled: Bool, value: Any?) {
+        switch property {
+        case .increaseCharacters:
+            return (true, currentString)
+        default:
+            return (true, nil)
+        }
+    }
+    
+    func updateValue(property: LabelProperty, value: Any) {
+        if let strValue = value as? String {
+            switch property {
+            case .increaseCharacters:
+                currentString = strValue
+            default:
+                ()
+            }
+        }
     }
     
     enum LabelProperty: String, CaseIterable, PropertyEnumProtocol {
