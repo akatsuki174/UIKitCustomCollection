@@ -37,7 +37,10 @@ extension LabelViewController: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: StepperCell.reuseIdentifier) as? StepperCell else { fatalError() }
             if let value = values.value as? String {
                 cell.bind(name: propertyName, value: value)
+            } else if let value = values.value as? Double {
+                cell.bind(name: propertyName, value: value)
             } else {
+                // あとで消す
                 cell.bind(name: propertyName, value: 1)
             }
             cell.delegate = self
@@ -90,6 +93,9 @@ extension LabelViewController: StepperCellDelegate {
                     customTarget.text = currentText + "a"
                 }
                 currentValue = customTarget.text ?? ""
+            case .borderWidth:
+                customTarget.layer.borderColor = UIColor.black.cgColor
+                customTarget.layer.borderWidth = CGFloat(value)
             default:
                 ()
             }
