@@ -9,7 +9,9 @@
 class LabelViewModel {
     private let properties = LabelProperty.allCases
     private var isEnableBackgroundColor = false
+    private var isEnableBorder = false
     private var currentString = "Label"
+    private var currentBorderWidth: Double = 1
     
     func numberOfRows() -> Int {
         return properties.count
@@ -24,6 +26,8 @@ class LabelViewModel {
         switch property {
         case .backgroundColor:
             return (isEnableBackgroundColor, nil)
+        case .border, .borderWidth:
+            return (isEnableBorder, currentBorderWidth)
         case .changeCharCount:
             return (true, currentString)
         default:
@@ -43,6 +47,15 @@ class LabelViewModel {
             switch property {
             case .backgroundColor:
                 isEnableBackgroundColor = boolValue
+            case .border:
+                isEnableBorder = boolValue
+            default:
+                ()
+            }
+        } else if let doubleValue = value as? Double {
+            switch property {
+            case .borderWidth:
+                currentBorderWidth = doubleValue
             default:
                 ()
             }
