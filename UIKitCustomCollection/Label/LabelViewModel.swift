@@ -8,6 +8,7 @@
 
 class LabelViewModel {
     private let properties = LabelProperty.allCases
+    private var isEnableBackgroundColor = false
     private var currentString = "Label"
     
     func numberOfRows() -> Int {
@@ -21,6 +22,8 @@ class LabelViewModel {
     
     func getPropertyValues(property: LabelProperty) -> (isEnabled: Bool, value: Any?) {
         switch property {
+        case .backgroundColor:
+            return (isEnableBackgroundColor, nil)
         case .changeCharCount:
             return (true, currentString)
         default:
@@ -33,6 +36,13 @@ class LabelViewModel {
             switch property {
             case .changeCharCount:
                 currentString = strValue
+            default:
+                ()
+            }
+        } else if let boolValue = value as? Bool {
+            switch property {
+            case .backgroundColor:
+                isEnableBackgroundColor = boolValue
             default:
                 ()
             }
