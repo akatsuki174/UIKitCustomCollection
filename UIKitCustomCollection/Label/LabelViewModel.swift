@@ -10,8 +10,10 @@ class LabelViewModel {
     private let properties = LabelProperty.allCases
     private var isEnableBackgroundColor = false
     private var isEnableBorder = false
+    private var isEnableRadius = false
     private var currentString = "Label"
     private var currentBorderWidth: Double = 1
+    private var currentRadiusValue: Double = 12
     
     func numberOfRows() -> Int {
         return properties.count
@@ -24,12 +26,14 @@ class LabelViewModel {
     
     func getPropertyValues(property: LabelProperty) -> (isEnabled: Bool, value: Any?) {
         switch property {
+        case .changeCharCount:
+            return (true, currentString)
         case .backgroundColor:
             return (isEnableBackgroundColor, nil)
         case .border, .borderWidth:
             return (isEnableBorder, currentBorderWidth)
-        case .changeCharCount:
-            return (true, currentString)
+        case .radius, .radiusValue:
+            return (isEnableRadius, currentRadiusValue)
         default:
             return (true, nil)
         }
@@ -49,6 +53,8 @@ class LabelViewModel {
                 isEnableBackgroundColor = boolValue
             case .border:
                 isEnableBorder = boolValue
+            case .radius:
+                isEnableRadius = boolValue
             default:
                 ()
             }
@@ -56,6 +62,8 @@ class LabelViewModel {
             switch property {
             case .borderWidth:
                 currentBorderWidth = doubleValue
+            case .radiusValue:
+                currentRadiusValue = doubleValue
             default:
                 ()
             }
