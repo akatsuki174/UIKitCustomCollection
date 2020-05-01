@@ -38,9 +38,9 @@ extension ViewViewController: UITableViewDataSource {
         } else if propertyPattern == .stepper {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: StepperCell.reuseIdentifier) as? StepperCell else { fatalError() }
             if (property == .shadowOpacity) {
-                cell.setForPercentageValue()
+                cell.setStepValue(stepValue: 0.1, maxValue: 1.0)
             } else {
-                cell.setForNormalValue()
+                cell.setStepValue()
             }
             if let value = values.value as? Double {
                 cell.bind(name: propertyName, value: value)

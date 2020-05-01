@@ -53,14 +53,9 @@ class StepperCell: UITableViewCell, BaseCellProtocol {
         stepper.value = Double(value.count)
     }
     
-    func setForPercentageValue() {
-        stepper.stepValue = 0.1
-        stepper.maximumValue = 1.0
-    }
-    
-    func setForNormalValue() {
-        stepper.stepValue = 1
-        stepper.maximumValue = 50
+    func setStepValue(stepValue: Double = 1, maxValue: Double = 50) {
+        stepper.stepValue = stepValue
+        stepper.maximumValue = maxValue
     }
     
     @IBAction func tappedStepper(_ sender: UIStepper) {
