@@ -50,10 +50,11 @@ class StepperCell: UITableViewCell, BaseCellProtocol {
     
     func bind(name: String, value: String) {
         propertyName.text = name
+        propertyValue.text = ""
         stepper.value = Double(value.count)
     }
     
-    func setStepValue(stepValue: Double = 1, maxValue: Double = 50) {
+    func setStepValue(stepValue: Double = 1, maxValue: Double = 100) {
         stepper.stepValue = stepValue
         stepper.maximumValue = maxValue
     }

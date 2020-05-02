@@ -35,6 +35,11 @@ extension LabelViewController: UITableViewDataSource {
             return cell
         } else if propertyPattern == .stepper {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: StepperCell.reuseIdentifier) as? StepperCell else { fatalError() }
+            if (property == .numberOfLines) {
+                cell.setStepValue(stepValue: 1.0, maxValue: 2.0)
+            } else {
+                cell.setStepValue()
+            }
             if let value = values.value as? String {
                 cell.bind(name: propertyName, value: value)
             } else if let value = values.value as? Double {
@@ -103,6 +108,8 @@ extension LabelViewController: StepperCellDelegate {
                 customTarget.layer.borderWidth = CGFloat(value)
             case .radiusValue:
                 customTarget.layer.cornerRadius = CGFloat(value)
+            case .numberOfLines:
+                customTarget.numberOfLines = Int(value)
             default:
                 ()
             }

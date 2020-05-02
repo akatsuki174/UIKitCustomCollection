@@ -14,6 +14,7 @@ class LabelViewModel {
     private var currentString = "Label"
     private var currentBorderWidth: Double = 1
     private var currentRadiusValue: Double = 12
+    private var currentLinesValue: Double = 1
     
     func numberOfRows() -> Int {
         return properties.count
@@ -34,6 +35,8 @@ class LabelViewModel {
             return (isEnableBorder, currentBorderWidth)
         case .radius, .radiusValue:
             return (isEnableRadius, currentRadiusValue)
+        case .numberOfLines:
+            return (true, currentLinesValue)
         default:
             return (true, nil)
         }
@@ -64,6 +67,8 @@ class LabelViewModel {
                 currentBorderWidth = doubleValue
             case .radiusValue:
                 currentRadiusValue = doubleValue
+            case .numberOfLines:
+                currentLinesValue = doubleValue
             default:
                 ()
             }
