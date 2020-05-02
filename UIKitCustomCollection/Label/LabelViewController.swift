@@ -63,6 +63,12 @@ extension LabelViewController: UITableViewDataSource {
     }
 }
 
+extension LabelViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
 extension LabelViewController: SwitchCellDelegate {
     func tappedSwitch(_ cell: SwitchCell, and isOn: Bool) {
         guard let indexPath = tableView.indexPath(for: cell) else { return }

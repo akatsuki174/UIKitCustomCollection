@@ -17,7 +17,7 @@ class DetailCell: UITableViewCell, BaseCellProtocol {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        selectionStyle = .default
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

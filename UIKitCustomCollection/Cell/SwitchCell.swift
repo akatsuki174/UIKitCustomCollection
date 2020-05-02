@@ -16,6 +16,7 @@ class SwitchCell: UITableViewCell, BaseCellProtocol {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        selectionStyle = .none
     }
     
     static var cellName: String = "SwitchCell"
