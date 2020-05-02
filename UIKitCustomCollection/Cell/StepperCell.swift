@@ -27,13 +27,6 @@ class StepperCell: UITableViewCell, BaseCellProtocol {
         // Configure the view for the selected state
     }
     
-    func bind(name: String, value: Double?) {
-        propertyName.text = name
-        guard let v = value else { return }
-        propertyValue.text = " = \(Int(v))"
-        stepper.value = v
-    }
-    
     func bind(name: String, ratio: Double?) {
         propertyName.text = name
         if let r = ratio {
@@ -48,10 +41,15 @@ class StepperCell: UITableViewCell, BaseCellProtocol {
         stepper.value = Double(size.width)
     }
     
-    func bind(name: String, value: String) {
+    func bind(name: String, value: Any?) {
         propertyName.text = name
-        propertyValue.text = ""
-        stepper.value = Double(value.count)
+        if let value = value as? Double {
+            propertyValue.text = " = \(Int(value))"
+            stepper.value = value
+        } else if let value = value as? String {
+            propertyValue.text = ""
+            stepper.value = Double(value.count)
+        }
     }
     
     func setStepValue(stepValue: Double = 1, maxValue: Double = 100) {
