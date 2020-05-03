@@ -8,12 +8,13 @@
 
 import UIKit
 
-class DetailCell: UITableViewCell, BaseCellProtocol {
+class PickerCell: UITableViewCell, BaseCellProtocol {
 
     @IBOutlet weak var propertyName: UILabel!
     @IBOutlet weak var propertyValue: UILabel!
+    weak var delegate: PickerCellDelegate?
     
-    static var cellName: String = "DetailCell"
+    static var cellName: String = "PickerCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,4 +31,8 @@ class DetailCell: UITableViewCell, BaseCellProtocol {
         propertyName.text = name
         propertyValue.text = value
     }
+}
+
+protocol PickerCellDelegate: AnyObject {
+    func tappedPickerButton(_ cell: PickerCell, index: Int)
 }

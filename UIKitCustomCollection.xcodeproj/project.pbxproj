@@ -32,11 +32,11 @@
 		185A8D522445EB370002A5F5 /* ShadowProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A8D512445EB370002A5F5 /* ShadowProperties.swift */; };
 		186466492440C33000354DE8 /* StringExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186466482440C33000354DE8 /* StringExtentions.swift */; };
 		1864664B2441EB5900354DE8 /* PropertyEnumProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1864664A2441EB5900354DE8 /* PropertyEnumProtocol.swift */; };
+		18716E81245416B900CA1CD4 /* PickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18716E7F245416B900CA1CD4 /* PickerCell.swift */; };
+		18716E82245416B900CA1CD4 /* PickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18716E80245416B900CA1CD4 /* PickerCell.xib */; };
 		18BEF876244DE6F0000DFFB7 /* LabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BEF875244DE6F0000DFFB7 /* LabelViewController.swift */; };
 		18BEF878244DE707000DFFB7 /* Label.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BEF877244DE707000DFFB7 /* Label.storyboard */; };
 		18BEF87A244E6D17000DFFB7 /* LabelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BEF879244E6D17000DFFB7 /* LabelViewModel.swift */; };
-		18716E81245416B900CA1CD4 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18716E7F245416B900CA1CD4 /* DetailCell.swift */; };
-		18716E82245416B900CA1CD4 /* DetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18716E80245416B900CA1CD4 /* DetailCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,11 +88,11 @@
 		185A8D512445EB370002A5F5 /* ShadowProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowProperties.swift; sourceTree = "<group>"; };
 		186466482440C33000354DE8 /* StringExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtentions.swift; sourceTree = "<group>"; };
 		1864664A2441EB5900354DE8 /* PropertyEnumProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyEnumProtocol.swift; sourceTree = "<group>"; };
+		18716E7F245416B900CA1CD4 /* PickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCell.swift; sourceTree = "<group>"; };
+		18716E80245416B900CA1CD4 /* PickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerCell.xib; sourceTree = "<group>"; };
 		18BEF875244DE6F0000DFFB7 /* LabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelViewController.swift; sourceTree = "<group>"; };
 		18BEF877244DE707000DFFB7 /* Label.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Label.storyboard; sourceTree = "<group>"; };
 		18BEF879244E6D17000DFFB7 /* LabelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelViewModel.swift; sourceTree = "<group>"; };
-		18716E7F245416B900CA1CD4 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
-		18716E80245416B900CA1CD4 /* DetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,8 +214,8 @@
 			children = (
 				180881852430DBA40075ECD6 /* BaseCellProtocol.swift */,
 				1807153324272A6D00740162 /* CustomPattern.swift */,
-				18716E7F245416B900CA1CD4 /* DetailCell.swift */,
-				18716E80245416B900CA1CD4 /* DetailCell.xib */,
+				18716E7F245416B900CA1CD4 /* PickerCell.swift */,
+				18716E80245416B900CA1CD4 /* PickerCell.xib */,
 				180881812430A8EE0075ECD6 /* StepperCell.swift */,
 				180881822430A8EE0075ECD6 /* StepperCell.xib */,
 				180715362428FB8600740162 /* SwitchCell.swift */,
@@ -340,7 +340,7 @@
 			files = (
 				1807150124225F9800740162 /* LaunchScreen.storyboard in Resources */,
 				180881842430A8EE0075ECD6 /* StepperCell.xib in Resources */,
-				18716E82245416B900CA1CD4 /* DetailCell.xib in Resources */,
+				18716E82245416B900CA1CD4 /* PickerCell.xib in Resources */,
 				185A8D4E2444154C0002A5F5 /* Button.storyboard in Resources */,
 				1807153024243A9600740162 /* View.storyboard in Resources */,
 				180714FE24225F9800740162 /* Assets.xcassets in Resources */,
@@ -385,7 +385,7 @@
 				181ED3322430F1D1002D2FD9 /* UIPart.swift in Sources */,
 				185A8D4C2444150A0002A5F5 /* ButtonViewController.swift in Sources */,
 				180714F724225F9500740162 /* SceneDelegate.swift in Sources */,
-				18716E81245416B900CA1CD4 /* DetailCell.swift in Sources */,
+				18716E81245416B900CA1CD4 /* PickerCell.swift in Sources */,
 				1864664B2441EB5900354DE8 /* PropertyEnumProtocol.swift in Sources */,
 				186466492440C33000354DE8 /* StringExtentions.swift in Sources */,
 				1807153424272A6D00740162 /* CustomPattern.swift in Sources */,

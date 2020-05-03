@@ -18,6 +18,7 @@ class LabelViewController: UIViewController {
         super.viewDidLoad()
         tableView.register(SwitchCell.nib(), forCellReuseIdentifier: SwitchCell.reuseIdentifier)
         tableView.register(StepperCell.nib(), forCellReuseIdentifier: StepperCell.reuseIdentifier)
+        tableView.register(PickerCell.nib(), forCellReuseIdentifier: PickerCell.reuseIdentifier)
     }
 }
 
@@ -51,8 +52,8 @@ extension LabelViewController: UITableViewDataSource {
             cell.delegate = self
             return cell
         } else if propertyPattern == .detail {
-            let cell = UITableViewCell()
-            cell.textLabel?.text = propertyName
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: PickerCell.reuseIdentifier) as? PickerCell else { fatalError() }
+            cell.bind(name: propertyName, value: "hoge")
             return cell
         }
         return UITableViewCell()
