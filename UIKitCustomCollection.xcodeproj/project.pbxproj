@@ -34,6 +34,7 @@
 		1864664B2441EB5900354DE8 /* PropertyEnumProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1864664A2441EB5900354DE8 /* PropertyEnumProtocol.swift */; };
 		18716E81245416B900CA1CD4 /* PickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18716E7F245416B900CA1CD4 /* PickerCell.swift */; };
 		18716E82245416B900CA1CD4 /* PickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18716E80245416B900CA1CD4 /* PickerCell.xib */; };
+		18716E8C24603E9D00CA1CD4 /* PickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18716E8B24603E9D00CA1CD4 /* PickerView.xib */; };
 		18BEF876244DE6F0000DFFB7 /* LabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BEF875244DE6F0000DFFB7 /* LabelViewController.swift */; };
 		18BEF878244DE707000DFFB7 /* Label.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BEF877244DE707000DFFB7 /* Label.storyboard */; };
 		18BEF87A244E6D17000DFFB7 /* LabelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BEF879244E6D17000DFFB7 /* LabelViewModel.swift */; };
@@ -90,6 +91,7 @@
 		1864664A2441EB5900354DE8 /* PropertyEnumProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyEnumProtocol.swift; sourceTree = "<group>"; };
 		18716E7F245416B900CA1CD4 /* PickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCell.swift; sourceTree = "<group>"; };
 		18716E80245416B900CA1CD4 /* PickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerCell.xib; sourceTree = "<group>"; };
+		18716E8B24603E9D00CA1CD4 /* PickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerView.xib; sourceTree = "<group>"; };
 		18BEF875244DE6F0000DFFB7 /* LabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelViewController.swift; sourceTree = "<group>"; };
 		18BEF877244DE707000DFFB7 /* Label.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Label.storyboard; sourceTree = "<group>"; };
 		18BEF879244E6D17000DFFB7 /* LabelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelViewModel.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				18BEF874244DE6D1000DFFB7 /* Label */,
 				186466472440C2D800354DE8 /* Cell */,
 				180714F424225F9500740162 /* AppDelegate.swift */,
+				18716E8B24603E9D00CA1CD4 /* PickerView.xib */,
 				1864664A2441EB5900354DE8 /* PropertyEnumProtocol.swift */,
 				180714F624225F9500740162 /* SceneDelegate.swift */,
 				185A8D512445EB370002A5F5 /* ShadowProperties.swift */,
@@ -338,6 +341,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18716E8C24603E9D00CA1CD4 /* PickerView.xib in Resources */,
 				1807150124225F9800740162 /* LaunchScreen.storyboard in Resources */,
 				180881842430A8EE0075ECD6 /* StepperCell.xib in Resources */,
 				18716E82245416B900CA1CD4 /* PickerCell.xib in Resources */,
