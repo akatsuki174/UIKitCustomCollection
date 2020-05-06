@@ -8,13 +8,13 @@
 
 import UIKit
 
-class PickerCell: UITableViewCell, BaseCellProtocol {
+class ActionSheetCell: UITableViewCell, BaseCellProtocol {
 
     @IBOutlet weak var propertyName: UILabel!
     @IBOutlet weak var propertyValue: UILabel!
-    weak var delegate: PickerCellDelegate?
+    weak var delegate: ActionSheetCellDelegate?
     
-    static var cellName: String = "PickerCell"
+    static var cellName: String = "ActionSheetCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,13 +26,22 @@ class PickerCell: UITableViewCell, BaseCellProtocol {
 
         // Configure the view for the selected state
     }
- 
+    
     func bind(name: String, value: String) {
         propertyName.text = name
         propertyValue.text = value
     }
+    
+    @IBAction func tappedButton(_ sender: Any) {
+        
+    }
+    
+    
+    @objc func showPicker() {
+        delegate?.tappedButton()
+    }
 }
 
-protocol PickerCellDelegate: AnyObject {
-    func tappedPickerButton(_ cell: PickerCell, index: Int)
+protocol ActionSheetCellDelegate: AnyObject {
+    func tappedButton()
 }

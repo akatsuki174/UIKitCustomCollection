@@ -18,7 +18,7 @@ class LabelViewController: UIViewController {
         super.viewDidLoad()
         tableView.register(SwitchCell.nib(), forCellReuseIdentifier: SwitchCell.reuseIdentifier)
         tableView.register(StepperCell.nib(), forCellReuseIdentifier: StepperCell.reuseIdentifier)
-        tableView.register(PickerCell.nib(), forCellReuseIdentifier: PickerCell.reuseIdentifier)
+        tableView.register(ActionSheetCell.nib(), forCellReuseIdentifier: ActionSheetCell.reuseIdentifier)
     }
 }
 
@@ -52,8 +52,9 @@ extension LabelViewController: UITableViewDataSource {
             cell.delegate = self
             return cell
         } else if propertyPattern == .detail {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: PickerCell.reuseIdentifier) as? PickerCell else { fatalError() }
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: ActionSheetCell.reuseIdentifier) as? ActionSheetCell else { fatalError() }
             cell.bind(name: propertyName, value: "hoge")
+            cell.delegate = self
             return cell
         }
         return UITableViewCell()
@@ -123,5 +124,11 @@ extension LabelViewController: StepperCellDelegate {
         }
         viewModel.updateValue(property: property, value: currentValue)
         tableView.reloadRows(at: [indexPath], with: .none)
+    }
+}
+
+extension LabelViewController: ActionSheetCellDelegate {
+    func tappedButton() {
+        
     }
 }
