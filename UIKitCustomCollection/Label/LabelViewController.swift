@@ -133,20 +133,23 @@ extension LabelViewController: ActionSheetCellDelegate {
         guard let property = viewModel.property(index: indexPath.row) else { return }
         switch property {
         case .lineBreakMode:
-            let alert = UIAlertController(title: "Select NSLineBreakMode value", message: nil, preferredStyle: .actionSheet)
-            let allCases = NSLineBreakMode.allCases
-            allCases.forEach { breakMode in
-                let action = UIAlertAction(title: String(describing: breakMode.name()), style: .default, handler: { [weak self] _ in
-                    self?.viewModel.updateValue(property: property, value: breakMode)
-                })
-                alert.addAction(action)
-            }
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-            alert.addAction(cancelAction)
-            present(alert, animated: true, completion: nil)
+            showActionSheet(cases: NSLineBreakMode.allCases, property: property)
         default:
             ()
         }
     }
     
+    private func showActionSheet<T: PropertyEnumProtocol>(cases: [T], property: LabelViewModel.LabelProperty) {
+        guard let firstCase = cases.first else { return }
+        let alert = UIAlertController(title: "Select \(String(describing: firstCase)) value", message: nil, preferredStyle: .actionSheet)
+        cases.forEach { c in
+            let action = UIAlertAction(title: c.name, style: .default, handler: { [weak self] _ in
+                self?.viewModel.updateValue(property: property, value: c)
+            })
+            alert.addAction(action)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
+    }
 }

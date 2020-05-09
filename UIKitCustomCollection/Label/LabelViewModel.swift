@@ -113,10 +113,10 @@ class LabelViewModel {
     }
 }
 
-extension NSLineBreakMode {
+extension NSLineBreakMode: PropertyEnumProtocol {
     static let allCases: [NSLineBreakMode] = [.byWordWrapping, .byCharWrapping, .byClipping, .byTruncatingHead, .byTruncatingTail, .byTruncatingMiddle]
 
-    func name() -> String {
+    var name: String {
         switch self {
         case .byWordWrapping:
             return "byWordWrapping"
