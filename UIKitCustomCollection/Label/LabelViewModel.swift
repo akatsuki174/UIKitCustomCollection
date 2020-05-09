@@ -6,6 +6,8 @@
 //  Copyright © 2020 akatsuki. All rights reserved.
 //
 
+import UIKit
+
 class LabelViewModel {
     private let properties = LabelProperty.allCases
     private var isEnableBackgroundColor = false
@@ -15,6 +17,9 @@ class LabelViewModel {
     private var currentBorderWidth: Double = 1
     private var currentRadiusValue: Double = 12
     private var currentLinesValue: Double = 1
+    private var currentLineBreakModeValue: NSLineBreakMode = .byWordWrapping
+    
+    let lineBreakModeAllCases: [NSLineBreakMode] = [.byWordWrapping, .byCharWrapping, .byClipping, .byTruncatingHead, .byTruncatingTail, .byTruncatingMiddle]
     
     func numberOfRows() -> Int {
         return properties.count
@@ -72,6 +77,8 @@ class LabelViewModel {
             default:
                 ()
             }
+        } else if let breakModeValue = value as? NSLineBreakMode {
+            currentLineBreakModeValue = breakModeValue
         }
     }
     
@@ -102,6 +109,29 @@ class LabelViewModel {
             case .lineBreakMode, .textAlignment, .baselineAdjustment:
                 return .detail
             }
+        }
+    }
+}
+
+extension NSLineBreakMode {
+    static let allCases: [NSLineBreakMode] = [.byWordWrapping, .byCharWrapping, .byClipping, .byTruncatingHead, .byTruncatingTail, .byTruncatingMiddle]
+
+    func name() -> String {
+        switch self {
+        case .byWordWrapping:
+            return "byWordWrapping"
+        case .byCharWrapping:
+            return "byCharWrapping"
+        case .byClipping:
+            return "byClipping"
+        case .byTruncatingHead:
+            return "byTruncatingHead"
+        case .byTruncatingTail:
+            return "byTruncatingTail"
+        case .byTruncatingMiddle:
+            return "byTruncatingMiddle"
+        default:
+            return ""
         }
     }
 }

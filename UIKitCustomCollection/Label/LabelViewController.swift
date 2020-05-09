@@ -128,7 +128,25 @@ extension LabelViewController: StepperCellDelegate {
 }
 
 extension LabelViewController: ActionSheetCellDelegate {
-    func tappedButton() {
-        
+    func tappedButton(_ cell: ActionSheetCell) {
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        guard let property = viewModel.property(index: indexPath.row) else { return }
+        switch property {
+        case .lineBreakMode:
+            let alert = UIAlertController(title: "Select NSLineBreakMode value", message: nil, preferredStyle: .actionSheet)
+            let allCases = NSLineBreakMode.allCases
+            allCases.forEach { breakMode in
+                let action = UIAlertAction(title: String(describing: breakMode.name()), style: .default, handler: { [weak self] _ in
+                    self?.viewModel.updateValue(property: property, value: breakMode)
+                })
+                alert.addAction(action)
+            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            alert.addAction(cancelAction)
+            present(alert, animated: true, completion: nil)
+        default:
+            ()
+        }
     }
+    
 }

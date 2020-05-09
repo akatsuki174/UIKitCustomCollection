@@ -33,15 +33,10 @@ class ActionSheetCell: UITableViewCell, BaseCellProtocol {
     }
     
     @IBAction func tappedButton(_ sender: Any) {
-        
-    }
-    
-    
-    @objc func showPicker() {
-        delegate?.tappedButton()
+        delegate?.tappedButton(self)
     }
 }
 
 protocol ActionSheetCellDelegate: AnyObject {
-    func tappedButton()
+    func tappedButton(_ cell: ActionSheetCell)
 }
