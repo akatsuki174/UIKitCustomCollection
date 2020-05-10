@@ -8,11 +8,11 @@
 
 import Foundation
 
-protocol PropertyEnumProtocol: RawRepresentable {
+protocol ReturnStringEnumNameProtocol: RawRepresentable {
     var name: String { get }
 }
 
-extension PropertyEnumProtocol where RawValue == String {
+extension ReturnStringEnumNameProtocol where RawValue == String {
     var name: String {
         return rawValue.camelToSpaceSeparatedWords()
     }

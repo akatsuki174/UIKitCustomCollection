@@ -74,7 +74,7 @@ class ViewViewModel {
         }
     }
     
-    enum ViewProperty: String, CaseIterable, PropertyEnumProtocol {
+    enum ViewProperty: String, CaseIterable, ReturnStringEnumNameProtocol {
         case backgroundColor
         case border
         case borderWidth

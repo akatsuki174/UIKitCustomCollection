@@ -31,7 +31,7 @@
 		185A8D5024441D5D0002A5F5 /* ButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A8D4F24441D5D0002A5F5 /* ButtonViewModel.swift */; };
 		185A8D522445EB370002A5F5 /* ShadowProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A8D512445EB370002A5F5 /* ShadowProperties.swift */; };
 		186466492440C33000354DE8 /* StringExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186466482440C33000354DE8 /* StringExtentions.swift */; };
-		1864664B2441EB5900354DE8 /* PropertyEnumProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1864664A2441EB5900354DE8 /* PropertyEnumProtocol.swift */; };
+		1864664B2441EB5900354DE8 /* ReturnStringEnumNameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1864664A2441EB5900354DE8 /* ReturnStringEnumNameProtocol.swift */; };
 		18716E81245416B900CA1CD4 /* ActionSheetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18716E7F245416B900CA1CD4 /* ActionSheetCell.swift */; };
 		18716E82245416B900CA1CD4 /* ActionSheetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18716E80245416B900CA1CD4 /* ActionSheetCell.xib */; };
 		18BEF876244DE6F0000DFFB7 /* LabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BEF875244DE6F0000DFFB7 /* LabelViewController.swift */; };
@@ -87,7 +87,7 @@
 		185A8D4F24441D5D0002A5F5 /* ButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewModel.swift; sourceTree = "<group>"; };
 		185A8D512445EB370002A5F5 /* ShadowProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowProperties.swift; sourceTree = "<group>"; };
 		186466482440C33000354DE8 /* StringExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtentions.swift; sourceTree = "<group>"; };
-		1864664A2441EB5900354DE8 /* PropertyEnumProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyEnumProtocol.swift; sourceTree = "<group>"; };
+		1864664A2441EB5900354DE8 /* ReturnStringEnumNameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnStringEnumNameProtocol.swift; sourceTree = "<group>"; };
 		18716E7F245416B900CA1CD4 /* ActionSheetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetCell.swift; sourceTree = "<group>"; };
 		18716E80245416B900CA1CD4 /* ActionSheetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActionSheetCell.xib; sourceTree = "<group>"; };
 		18BEF875244DE6F0000DFFB7 /* LabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelViewController.swift; sourceTree = "<group>"; };
@@ -149,7 +149,7 @@
 				18BEF874244DE6D1000DFFB7 /* Label */,
 				186466472440C2D800354DE8 /* Cell */,
 				180714F424225F9500740162 /* AppDelegate.swift */,
-				1864664A2441EB5900354DE8 /* PropertyEnumProtocol.swift */,
+				1864664A2441EB5900354DE8 /* ReturnStringEnumNameProtocol.swift */,
 				180714F624225F9500740162 /* SceneDelegate.swift */,
 				185A8D512445EB370002A5F5 /* ShadowProperties.swift */,
 				186466482440C33000354DE8 /* StringExtentions.swift */,
@@ -386,7 +386,7 @@
 				185A8D4C2444150A0002A5F5 /* ButtonViewController.swift in Sources */,
 				180714F724225F9500740162 /* SceneDelegate.swift in Sources */,
 				18716E81245416B900CA1CD4 /* ActionSheetCell.swift in Sources */,
-				1864664B2441EB5900354DE8 /* PropertyEnumProtocol.swift in Sources */,
+				1864664B2441EB5900354DE8 /* ReturnStringEnumNameProtocol.swift in Sources */,
 				186466492440C33000354DE8 /* StringExtentions.swift in Sources */,
 				1807153424272A6D00740162 /* CustomPattern.swift in Sources */,
 				180881832430A8EE0075ECD6 /* StepperCell.swift in Sources */,

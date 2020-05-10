@@ -112,7 +112,7 @@ class ButtonViewModel {
         }
     }
     
-    enum ButtonProperty: String, CaseIterable, PropertyEnumProtocol {
+    enum ButtonProperty: String, CaseIterable, ReturnStringEnumNameProtocol {
         case backgroundColor
         case border
         case borderWidth

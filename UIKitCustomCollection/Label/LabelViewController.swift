@@ -139,7 +139,7 @@ extension LabelViewController: ActionSheetCellDelegate {
         }
     }
     
-    private func showActionSheet<T: PropertyEnumProtocol>(cases: [T], property: LabelViewModel.LabelProperty) {
+    private func showActionSheet<T: ReturnStringEnumNameProtocol>(cases: [T], property: LabelViewModel.LabelProperty) {
         guard let firstCase = cases.first else { return }
         let alert = UIAlertController(title: "Select \(String(describing: firstCase)) value", message: nil, preferredStyle: .actionSheet)
         cases.forEach { c in

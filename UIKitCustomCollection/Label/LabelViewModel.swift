@@ -82,7 +82,7 @@ class LabelViewModel {
         }
     }
     
-    enum LabelProperty: String, CaseIterable, PropertyEnumProtocol {
+    enum LabelProperty: String, CaseIterable, ReturnStringEnumNameProtocol {
         case changeCharCount
         case backgroundColor
         case border
@@ -113,7 +113,7 @@ class LabelViewModel {
     }
 }
 
-extension NSLineBreakMode: PropertyEnumProtocol {
+extension NSLineBreakMode: ReturnStringEnumNameProtocol {
     static let allCases: [NSLineBreakMode] = [.byWordWrapping, .byCharWrapping, .byClipping, .byTruncatingHead, .byTruncatingTail, .byTruncatingMiddle]
 
     var name: String {
