@@ -42,6 +42,8 @@ class LabelViewModel {
             return (isEnableRadius, currentRadiusValue)
         case .numberOfLines:
             return (true, currentLinesValue)
+        case .lineBreakMode:
+            return (true, currentLineBreakModeValue)
         default:
             return (true, nil)
         }

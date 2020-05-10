@@ -53,7 +53,9 @@ extension LabelViewController: UITableViewDataSource {
             return cell
         } else if propertyPattern == .detail {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ActionSheetCell.reuseIdentifier) as? ActionSheetCell else { fatalError() }
-            cell.bind(name: propertyName, value: "hoge")
+            if let value = values.value as? NSLineBreakMode {
+                cell.bind(name: propertyName, value: value.name)
+            }
             cell.delegate = self
             return cell
         }
