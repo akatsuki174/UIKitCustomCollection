@@ -18,7 +18,7 @@ class ActionSheetCell: UITableViewCell, BaseCellProtocol {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        selectionStyle = .default
+        selectionStyle = .none
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
