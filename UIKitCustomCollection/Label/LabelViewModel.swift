@@ -19,8 +19,6 @@ class LabelViewModel {
     private var currentLinesValue: Double = 1
     private var currentLineBreakModeValue: NSLineBreakMode = .byWordWrapping
     
-    let lineBreakModeAllCases: [NSLineBreakMode] = [.byWordWrapping, .byCharWrapping, .byClipping, .byTruncatingHead, .byTruncatingTail, .byTruncatingMiddle]
-    
     func numberOfRows() -> Int {
         return properties.count
     }
