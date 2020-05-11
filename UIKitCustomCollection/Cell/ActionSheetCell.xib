@@ -22,40 +22,48 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zEx-Xa-1Lx">
-                        <rect key="frame" x="230" y="11.5" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJf-IQ-Us2">
-                        <rect key="frame" x="272" y="6" width="32" height="32"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fQr-7T-qvJ">
+                        <rect key="frame" x="235.5" y="4" width="68.5" height="36"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zEx-Xa-1Lx">
+                                <rect key="frame" x="4" y="7.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.down" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="GGd-Mg-98U">
+                                <rect key="frame" x="50" y="13" width="18.5" height="10.5"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="32" id="5P3-Xf-Tbv"/>
-                            <constraint firstAttribute="height" constant="32" id="an5-bZ-hFT"/>
+                            <constraint firstItem="zEx-Xa-1Lx" firstAttribute="centerY" secondItem="fQr-7T-qvJ" secondAttribute="centerY" id="9Ww-wo-SCY"/>
+                            <constraint firstItem="zEx-Xa-1Lx" firstAttribute="leading" secondItem="fQr-7T-qvJ" secondAttribute="leading" constant="4" id="RGb-Gw-PWq"/>
+                            <constraint firstItem="GGd-Mg-98U" firstAttribute="centerY" secondItem="fQr-7T-qvJ" secondAttribute="centerY" id="WHx-E7-2me"/>
+                            <constraint firstAttribute="trailing" secondItem="GGd-Mg-98U" secondAttribute="trailing" id="ce4-Tp-r9X"/>
+                            <constraint firstItem="GGd-Mg-98U" firstAttribute="leading" secondItem="zEx-Xa-1Lx" secondAttribute="trailing" constant="4" id="nud-1S-a0O"/>
                         </constraints>
-                        <state key="normal" title="▼"/>
-                        <connections>
-                            <action selector="tappedButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="dwd-lS-uS1"/>
-                        </connections>
-                    </button>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="zEx-Xa-1Lx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZYI-fq-nSN" secondAttribute="trailing" constant="8" id="02I-8o-Cq8"/>
-                    <constraint firstItem="pJf-IQ-Us2" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="AMF-7w-GgE"/>
+                    <constraint firstAttribute="trailing" secondItem="fQr-7T-qvJ" secondAttribute="trailing" constant="16" id="5fB-Xt-BAQ"/>
+                    <constraint firstItem="fQr-7T-qvJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="8uB-xW-sw5"/>
                     <constraint firstItem="ZYI-fq-nSN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="GLa-d5-EJh"/>
                     <constraint firstItem="ZYI-fq-nSN" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Ps2-rV-xGs"/>
-                    <constraint firstItem="zEx-Xa-1Lx" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ft4-FQ-AUa"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="pJf-IQ-Us2" secondAttribute="trailing" id="u0U-Yi-TFA"/>
-                    <constraint firstItem="pJf-IQ-Us2" firstAttribute="leading" secondItem="zEx-Xa-1Lx" secondAttribute="trailing" id="yUa-8l-wof"/>
+                    <constraint firstAttribute="bottom" secondItem="fQr-7T-qvJ" secondAttribute="bottom" constant="4" id="Z1D-go-Adt"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="propertyName" destination="ZYI-fq-nSN" id="DDJ-8M-WNX"/>
                 <outlet property="propertyValue" destination="zEx-Xa-1Lx" id="uLV-z1-9BB"/>
+                <outlet property="propertyValueArea" destination="fQr-7T-qvJ" id="VK3-fO-q02"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="97.767857142857139"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="chevron.down" catalog="system" width="128" height="72"/>
+    </resources>
 </document>

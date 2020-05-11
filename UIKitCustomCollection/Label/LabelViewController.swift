@@ -71,6 +71,10 @@ extension LabelViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
+        return 48
+    }
 }
 
 extension LabelViewController: SwitchCellDelegate {

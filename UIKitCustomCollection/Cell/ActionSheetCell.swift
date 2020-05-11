@@ -12,6 +12,7 @@ class ActionSheetCell: UITableViewCell, BaseCellProtocol {
 
     @IBOutlet weak var propertyName: UILabel!
     @IBOutlet weak var propertyValue: UILabel!
+    @IBOutlet weak var propertyValueArea: UIView!
     weak var delegate: ActionSheetCellDelegate?
     
     static var cellName: String = "ActionSheetCell"
@@ -19,6 +20,7 @@ class ActionSheetCell: UITableViewCell, BaseCellProtocol {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
+        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tappedButton)))
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -32,7 +34,7 @@ class ActionSheetCell: UITableViewCell, BaseCellProtocol {
         propertyValue.text = value
     }
     
-    @IBAction func tappedButton(_ sender: Any) {
+    @objc func tappedButton() {
         delegate?.tappedButton(self)
     }
 }
