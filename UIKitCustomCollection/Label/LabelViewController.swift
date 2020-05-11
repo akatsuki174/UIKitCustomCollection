@@ -135,18 +135,21 @@ extension LabelViewController: ActionSheetCellDelegate {
         guard let property = viewModel.property(index: indexPath.row) else { return }
         switch property {
         case .lineBreakMode:
-            showActionSheet(cases: NSLineBreakMode.allCases, property: property, indexPath: indexPath)
+            showActionSheet(cases: NSLineBreakMode.allCases, property: property, indexPath: indexPath, completion: { [weak self] index in
+                self?.customTarget.lineBreakMode = NSLineBreakMode.allCases[index]
+            })
         default:
             ()
         }
     }
     
-    private func showActionSheet<T: ReturnStringEnumNameProtocol>(cases: [T], property: LabelViewModel.LabelProperty, indexPath: IndexPath) {
+    private func showActionSheet<T: ReturnStringEnumNameProtocol>(cases: [T], property: LabelViewModel.LabelProperty, indexPath: IndexPath, completion: @escaping (Int) -> Void) {
         guard let firstCase = cases.first else { return }
         let alert = UIAlertController(title: "Select \(String(describing: firstCase)) value", message: nil, preferredStyle: .actionSheet)
-        cases.forEach { c in
-            let action = UIAlertAction(title: c.name, style: .default, handler: { [weak self] _ in
-                self?.viewModel.updateValue(property: property, value: c)
+        for (index, value) in cases.enumerated() {
+            let action = UIAlertAction(title: value.name, style: .default, handler: { [weak self] _ in
+                completion(index)
+                self?.viewModel.updateValue(property: property, value: value)
                 self?.tableView.reloadRows(at: [indexPath], with: .none)
             })
             alert.addAction(action)
