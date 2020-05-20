@@ -13,7 +13,7 @@ class LabelViewModel {
     private var isEnableBackgroundColor = false
     private var isEnableBorder = false
     private var isEnableRadius = false
-    private var currentString = "Label"
+    private var currentWords: [String] = ["Label"]
     private var currentBorderWidth: Double = 1
     private var currentRadiusValue: Double = 12
     private var currentLinesValue: Double = 1
@@ -31,7 +31,7 @@ class LabelViewModel {
     func getPropertyValues(property: LabelProperty) -> (isEnabled: Bool, value: Any?) {
         switch property {
         case .changeCharCount:
-            return (true, currentString)
+            return (true, currentWords)
         case .backgroundColor:
             return (isEnableBackgroundColor, nil)
         case .border, .borderWidth:
@@ -48,10 +48,10 @@ class LabelViewModel {
     }
     
     func updateValue(property: LabelProperty, value: Any) {
-        if let strValue = value as? String {
+        if let strArrayValue = value as? [String] {
             switch property {
             case .changeCharCount:
-                currentString = strValue
+                currentWords = strArrayValue
             default:
                 ()
             }
@@ -111,6 +111,8 @@ class LabelViewModel {
             }
         }
     }
+    
+    let programmingLanguages = ["Swift", "Objective-C", "Java", "Kotlin", "Ruby", "Python", "C", "C#", "PHP", "Perl", "Go", "Rust", "JavaScript", "Scala", "COBOL"]
 }
 
 extension NSLineBreakMode: ReturnStringEnumNameProtocol {

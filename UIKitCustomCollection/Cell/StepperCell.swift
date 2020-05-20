@@ -46,7 +46,7 @@ class StepperCell: UITableViewCell, BaseCellProtocol {
         if let value = value as? Double {
             propertyValue.text = " = \(Int(value))"
             stepper.value = value
-        } else if let value = value as? String {
+        } else if let value = value as? [String]  {
             propertyValue.text = ""
             stepper.value = Double(value.count)
         }

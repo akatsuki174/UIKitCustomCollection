@@ -41,7 +41,7 @@ extension LabelViewController: UITableViewDataSource {
             } else {
                 cell.setStepValue()
             }
-            if let value = values.value as? String {
+            if let value = values.value as? [String], property == .changeCharCount {
                 cell.bind(name: propertyName, value: value)
             } else if let value = values.value as? Double {
                 cell.bind(name: propertyName, value: value)
@@ -104,19 +104,23 @@ extension LabelViewController: SwitchCellDelegate {
 
 extension LabelViewController: StepperCellDelegate {
     func tappedStepper(_ cell: StepperCell, value: Double) {
-        var currentValue: Any = value
+        var currentValue: Any? = value
         guard let indexPath = tableView.indexPath(for: cell) else { return }
         guard let property = viewModel.property(index: indexPath.row) else { return }
         if viewModel.getPropertyValues(property: property).isEnabled {
             switch property {
             case .changeCharCount:
+                currentValue = nil
                 let currentText = customTarget.text ?? ""
-                if (currentText.count > Int(value)) {
-                    customTarget.text = String(currentText.dropLast())
-                } else if (currentText.count < Int(value)) {
-                    customTarget.text = currentText + "a"
+                var currentWords = currentText.components(separatedBy: " ")
+                if (currentWords.count > Int(value)) {
+                    currentWords.removeLast()
+                    currentValue = currentWords
+                } else if (currentWords.count < Int(value)) {
+                    currentWords.append(viewModel.programmingLanguages.randomElement()!)
+                    currentValue = currentWords
                 }
-                currentValue = customTarget.text ?? ""
+                customTarget.text = currentWords.joined(separator: " ")
             case .borderWidth:
                 customTarget.layer.borderColor = UIColor.black.cgColor
                 customTarget.layer.borderWidth = CGFloat(value)
@@ -128,7 +132,8 @@ extension LabelViewController: StepperCellDelegate {
                 ()
             }
         }
-        viewModel.updateValue(property: property, value: currentValue)
+        guard let value = currentValue else { return }
+        viewModel.updateValue(property: property, value: value)
         tableView.reloadRows(at: [indexPath], with: .none)
     }
 }
