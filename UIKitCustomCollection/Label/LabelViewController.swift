@@ -95,6 +95,8 @@ extension LabelViewController: SwitchCellDelegate {
                 customTarget.layer.cornerRadius = CGFloat(isOn ? value : 0)
                 customTarget.clipsToBounds = true
             }
+        case .adjustsFontSizeToFitWidth:
+            customTarget.adjustsFontSizeToFitWidth = isOn
         default:
             ()
         }

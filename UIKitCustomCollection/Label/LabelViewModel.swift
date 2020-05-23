@@ -13,6 +13,7 @@ class LabelViewModel {
     private var isEnableBackgroundColor = false
     private var isEnableBorder = false
     private var isEnableRadius = false
+    private var isEnableAdjustsFontSizeToFitWidth = false
     private var currentWords: [String] = ["Label"]
     private var currentBorderWidth: Double = 1
     private var currentRadiusValue: Double = 12
@@ -38,6 +39,8 @@ class LabelViewModel {
             return (isEnableBorder, currentBorderWidth)
         case .radius, .radiusValue:
             return (isEnableRadius, currentRadiusValue)
+        case .adjustsFontSizeToFitWidth:
+            return (isEnableAdjustsFontSizeToFitWidth, nil)
         case .numberOfLines:
             return (true, currentLinesValue)
         case .lineBreakMode:
@@ -63,6 +66,8 @@ class LabelViewModel {
                 isEnableBorder = boolValue
             case .radius:
                 isEnableRadius = boolValue
+            case .adjustsFontSizeToFitWidth:
+                isEnableAdjustsFontSizeToFitWidth = boolValue
             default:
                 ()
             }
