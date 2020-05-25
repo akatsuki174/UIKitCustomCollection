@@ -38,11 +38,15 @@ extension LabelViewController: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: StepperCell.reuseIdentifier) as? StepperCell else { fatalError() }
             if (property == .numberOfLines) {
                 cell.setStepValue(stepValue: 1.0, maxValue: 2.0)
+            } else if (property == .minimumScaleFactor) {
+                cell.setStepValue(stepValue: 0.1, maxValue: 1.0)
             } else {
                 cell.setStepValue()
             }
             if let value = values.value as? [String], property == .changeCharCount {
                 cell.bind(name: propertyName, value: value)
+            } else if let value = values.value as? Double, property == .minimumScaleFactor {
+                cell.bind(name: propertyName, ratio: value)
             } else if let value = values.value as? Double {
                 cell.bind(name: propertyName, value: value)
             } else {
@@ -97,6 +101,9 @@ extension LabelViewController: SwitchCellDelegate {
             }
         case .adjustsFontSizeToFitWidth:
             customTarget.adjustsFontSizeToFitWidth = isOn
+            if let value = value as? Double {
+                customTarget.minimumScaleFactor = CGFloat(value)
+            }
         default:
             ()
         }
@@ -130,6 +137,8 @@ extension LabelViewController: StepperCellDelegate {
                 customTarget.layer.cornerRadius = CGFloat(value)
             case .numberOfLines:
                 customTarget.numberOfLines = Int(value)
+            case .minimumScaleFactor:
+                customTarget.minimumScaleFactor = CGFloat(value)
             default:
                 ()
             }

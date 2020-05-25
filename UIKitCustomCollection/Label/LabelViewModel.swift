@@ -18,6 +18,7 @@ class LabelViewModel {
     private var currentBorderWidth: Double = 1
     private var currentRadiusValue: Double = 12
     private var currentLinesValue: Double = 1
+    private var currentMinimumScaleFactor: Double = 0.7
     private var currentLineBreakModeValue: NSLineBreakMode = .byWordWrapping
     
     func numberOfRows() -> Int {
@@ -40,11 +41,13 @@ class LabelViewModel {
         case .radius, .radiusValue:
             return (isEnableRadius, currentRadiusValue)
         case .adjustsFontSizeToFitWidth:
-            return (isEnableAdjustsFontSizeToFitWidth, nil)
+            return (isEnableAdjustsFontSizeToFitWidth, currentMinimumScaleFactor)
         case .numberOfLines:
             return (true, currentLinesValue)
         case .lineBreakMode:
             return (true, currentLineBreakModeValue)
+        case .minimumScaleFactor:
+            return (true, currentMinimumScaleFactor)
         default:
             return (true, nil)
         }
@@ -79,6 +82,8 @@ class LabelViewModel {
                 currentRadiusValue = doubleValue
             case .numberOfLines:
                 currentLinesValue = doubleValue
+            case .minimumScaleFactor:
+                currentMinimumScaleFactor = doubleValue
             default:
                 ()
             }
