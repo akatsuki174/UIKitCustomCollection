@@ -47,6 +47,8 @@ extension LabelViewController: UITableViewDataSource {
                 cell.bind(name: propertyName, value: value)
             } else if let value = values.value as? Double, property == .minimumScaleFactor {
                 cell.bind(name: propertyName, ratio: value)
+            } else if let value = values.value as? CGSize, property == .shadowOffset {
+                cell.bind(name: propertyName, size: CGSize(width: value.width, height: value.height))
             } else if let value = values.value as? Double {
                 cell.bind(name: propertyName, value: value)
             } else {
@@ -139,6 +141,11 @@ extension LabelViewController: StepperCellDelegate {
                 customTarget.numberOfLines = Int(value)
             case .minimumScaleFactor:
                 customTarget.minimumScaleFactor = CGFloat(value)
+            case .shadowOffset:
+                customTarget.layer.shadowColor = UIColor.black.cgColor // dummy
+                customTarget.layer.shadowOpacity = 1.0
+                customTarget.layer.shadowRadius = 3.0
+                customTarget.layer.shadowOffset = CGSize(width: value, height: value)
             default:
                 ()
             }

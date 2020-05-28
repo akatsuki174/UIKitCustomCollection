@@ -20,6 +20,7 @@ class LabelViewModel {
     private var currentLinesValue: Double = 1
     private var currentMinimumScaleFactor: Double = 0.7
     private var currentLineBreakModeValue: NSLineBreakMode = .byWordWrapping
+    private var currentShadowOffset: CGSize = CGSize(width: 0, height: 0)
     
     func numberOfRows() -> Int {
         return properties.count
@@ -48,6 +49,8 @@ class LabelViewModel {
             return (true, currentLineBreakModeValue)
         case .minimumScaleFactor:
             return (true, currentMinimumScaleFactor)
+        case .shadowOffset:
+            return (true, currentShadowOffset)
         default:
             return (true, nil)
         }
@@ -84,6 +87,8 @@ class LabelViewModel {
                 currentLinesValue = doubleValue
             case .minimumScaleFactor:
                 currentMinimumScaleFactor = doubleValue
+            case .shadowOffset:
+                currentShadowOffset = CGSize(width: doubleValue, height: doubleValue)
             default:
                 ()
             }
