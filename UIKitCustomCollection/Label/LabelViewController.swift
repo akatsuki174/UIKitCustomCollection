@@ -106,6 +106,11 @@ extension LabelViewController: SwitchCellDelegate {
             if let value = value as? Double {
                 customTarget.minimumScaleFactor = CGFloat(value)
             }
+        case .shadowColor:
+            customTarget.shadowColor = isOn ? viewModel.shadowColor() : UIColor.clear
+            if let value = value as? CGSize {
+                customTarget.shadowOffset = value
+            }
         default:
             ()
         }
@@ -142,7 +147,7 @@ extension LabelViewController: StepperCellDelegate {
             case .minimumScaleFactor:
                 customTarget.minimumScaleFactor = CGFloat(value)
             case .shadowOffset:
-                customTarget.shadowColor = UIColor.gray // dummy
+                customTarget.shadowColor = viewModel.shadowColor()
                 customTarget.shadowOffset = CGSize(width: value, height: value)
             default:
                 ()

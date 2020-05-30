@@ -14,6 +14,7 @@ class LabelViewModel {
     private var isEnableBorder = false
     private var isEnableRadius = false
     private var isEnableAdjustsFontSizeToFitWidth = false
+    private var isEnableShadowColor = true
     private var currentWords: [String] = ["Label"]
     private var currentBorderWidth: Double = 1
     private var currentRadiusValue: Double = 12
@@ -49,8 +50,8 @@ class LabelViewModel {
             return (true, currentLineBreakModeValue)
         case .minimumScaleFactor:
             return (true, currentMinimumScaleFactor)
-        case .shadowOffset:
-            return (true, currentShadowOffset)
+        case .shadowColor, .shadowOffset:
+            return (isEnableShadowColor, currentShadowOffset)
         default:
             return (true, nil)
         }
@@ -74,6 +75,8 @@ class LabelViewModel {
                 isEnableRadius = boolValue
             case .adjustsFontSizeToFitWidth:
                 isEnableAdjustsFontSizeToFitWidth = boolValue
+            case .shadowColor:
+                isEnableShadowColor = boolValue
             default:
                 ()
             }
@@ -97,6 +100,10 @@ class LabelViewModel {
         }
     }
     
+    func shadowColor() -> UIColor {
+        return UIColor.gray
+    }
+    
     enum LabelProperty: String, CaseIterable, ReturnStringEnumNameProtocol {
         case changeCharCount
         case backgroundColor
@@ -108,8 +115,8 @@ class LabelViewModel {
         case lineBreakMode
         case adjustsFontSizeToFitWidth
         case minimumScaleFactor
-        case shadowOffset
         case shadowColor
+        case shadowOffset
         case textColor
         case textAlignment
         case baselineAdjustment
@@ -117,9 +124,9 @@ class LabelViewModel {
 
         func customPattern() -> CustomPattern {
             switch self {
-            case .backgroundColor, .border, .radius, .adjustsFontSizeToFitWidth, .textColor, .tappedTextColor:
+            case .backgroundColor, .border, .radius, .adjustsFontSizeToFitWidth, .textColor, .tappedTextColor, .shadowColor:
                 return .switch
-            case .changeCharCount, .borderWidth, .radiusValue, .numberOfLines, .minimumScaleFactor, .shadowOffset, .shadowColor:
+            case .changeCharCount, .borderWidth, .radiusValue, .numberOfLines, .minimumScaleFactor, .shadowOffset:
                 return .stepper
             case .lineBreakMode, .textAlignment, .baselineAdjustment:
                 return .detail
