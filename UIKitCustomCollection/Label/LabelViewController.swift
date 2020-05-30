@@ -142,10 +142,8 @@ extension LabelViewController: StepperCellDelegate {
             case .minimumScaleFactor:
                 customTarget.minimumScaleFactor = CGFloat(value)
             case .shadowOffset:
-                customTarget.layer.shadowColor = UIColor.black.cgColor // dummy
-                customTarget.layer.shadowOpacity = 1.0
-                customTarget.layer.shadowRadius = 3.0
-                customTarget.layer.shadowOffset = CGSize(width: value, height: value)
+                customTarget.shadowColor = UIColor.gray // dummy
+                customTarget.shadowOffset = CGSize(width: value, height: value)
             default:
                 ()
             }
