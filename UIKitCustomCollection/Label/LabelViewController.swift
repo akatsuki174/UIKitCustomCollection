@@ -111,6 +111,8 @@ extension LabelViewController: SwitchCellDelegate {
             if let value = value as? CGSize {
                 customTarget.shadowOffset = value
             }
+        case .textColor:
+            customTarget.textColor = isOn ? viewModel.textColor() : UIColor.black
         default:
             ()
         }

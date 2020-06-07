@@ -15,6 +15,7 @@ class LabelViewModel {
     private var isEnableRadius = false
     private var isEnableAdjustsFontSizeToFitWidth = false
     private var isEnableShadowColor = true
+    private var isEnableTextColor = false
     private var currentWords: [String] = ["Label"]
     private var currentBorderWidth: Double = 1
     private var currentRadiusValue: Double = 12
@@ -52,6 +53,8 @@ class LabelViewModel {
             return (true, currentMinimumScaleFactor)
         case .shadowColor, .shadowOffset:
             return (isEnableShadowColor, currentShadowOffset)
+        case .textColor:
+            return (isEnableTextColor, textColor())
         default:
             return (true, nil)
         }
@@ -102,6 +105,10 @@ class LabelViewModel {
     
     func shadowColor() -> UIColor {
         return UIColor.gray
+    }
+    
+    func textColor() -> UIColor {
+        return UIColor.green
     }
     
     enum LabelProperty: String, CaseIterable, ReturnStringEnumNameProtocol {
