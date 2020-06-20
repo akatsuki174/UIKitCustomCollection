@@ -59,7 +59,10 @@ extension LabelViewController: UITableViewDataSource {
             return cell
         } else if propertyPattern == .detail {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ActionSheetCell.reuseIdentifier) as? ActionSheetCell else { fatalError() }
+            // TODO: refactor https://medium.com/finc-engineering/casting-to-protocol-having-associatedtype-e5854994a97f
             if let value = values.value as? NSLineBreakMode {
+                cell.bind(name: propertyName, value: value.name)
+            } else if let value = values.value as? NSTextAlignment {
                 cell.bind(name: propertyName, value: value.name)
             }
             cell.delegate = self
@@ -169,6 +172,10 @@ extension LabelViewController: ActionSheetCellDelegate {
         case .lineBreakMode:
             showActionSheet(cases: NSLineBreakMode.allCases, property: property, indexPath: indexPath, completion: { [weak self] index in
                 self?.customTarget.lineBreakMode = NSLineBreakMode.allCases[index]
+            })
+        case .textAlignment:
+            showActionSheet(cases: NSTextAlignment.allCases, property: property, indexPath: indexPath, completion: { [weak self] index in
+                self?.customTarget.textAlignment = NSTextAlignment.allCases[index]
             })
         default:
             ()

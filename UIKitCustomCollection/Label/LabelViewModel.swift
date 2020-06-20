@@ -23,6 +23,7 @@ class LabelViewModel {
     private var currentMinimumScaleFactor: Double = 0.7
     private var currentLineBreakModeValue: NSLineBreakMode = .byWordWrapping
     private var currentShadowOffset: CGSize = CGSize(width: 0, height: 0)
+    private var currentAlignmentValue: NSTextAlignment = .left
     
     func numberOfRows() -> Int {
         return properties.count
@@ -55,6 +56,8 @@ class LabelViewModel {
             return (isEnableShadowColor, currentShadowOffset)
         case .textColor:
             return (isEnableTextColor, textColor())
+        case .textAlignment:
+            return (true, currentAlignmentValue)
         default:
             return (true, nil)
         }
@@ -100,6 +103,8 @@ class LabelViewModel {
             }
         } else if let breakModeValue = value as? NSLineBreakMode {
             currentLineBreakModeValue = breakModeValue
+        } else if let alignmentValue = value as? NSTextAlignment {
+            currentAlignmentValue = alignmentValue
         }
     }
     
