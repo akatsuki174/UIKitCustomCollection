@@ -166,3 +166,24 @@ extension NSLineBreakMode: ReturnStringEnumNameProtocol {
         }
     }
 }
+
+extension NSTextAlignment: ReturnStringEnumNameProtocol {
+    static let allCases: [NSTextAlignment] = [.left, .center, .right, .justified, .natural]
+    
+    var name: String {
+        switch self {
+        case .left:
+            return "left"
+        case .center:
+            return "center"
+        case .right:
+            return "right"
+        case .justified:
+            return "justified"
+        case .natural:
+            return "natural"
+        default:
+            return ""
+        }
+    }
+}
